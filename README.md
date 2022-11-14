@@ -51,6 +51,7 @@
 | Manuel Kloster          | Backend  | https://www.linkedin.com/in/manuel-kloster           | https://github.com/Nekrocow/        |
 | Mauro Arteaga           | Frontend | https://www.linkedin.com/in/mauro-arteaga-754543241/ | https://github.com/Mauroskyer       |
 | Alexander Castañeda     | Frontend | https://www.linkedin.com/in/alexander-castañeda       | https://github.com/iwill88       |
+| Ivan Belasich     | Frontend | https://www.linkedin.com/in/ivanbelasich      | https://github.com/ivanbelasich       |
 
 
 <a name="deploy"></a>
