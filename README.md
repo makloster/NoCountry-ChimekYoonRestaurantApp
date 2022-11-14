@@ -49,8 +49,8 @@
 | Developer               | Rol      | LinkedIn                                             | GitHub - Behance                    |
 | ----------------------- | -------- | ---------------------------------------------------- | ----------------------------------- |
 | Manuel Kloster          | Backend  | https://www.linkedin.com/in/manuel-kloster           | https://github.com/Nekrocow/        |
-| Mauro Arteaga           | Frontend | https://www.linkedin.com/in/mauro-arteaga-754543241/ | https://github.com/Mauroskyer       |
-| Alexander Castañeda     | Frontend | www.linkedin.com/in/alexander-paul-castañeda-salinas | https://github.com/iwill88       |
+| Mauro Arteaga           | Frontend | https://www.linkedin.c om/in/mauro-arteaga-754543241/ | https://github.com/Mauroskyer       |
+| Alexander Castañeda     | Frontend | https://www.linkedin.com/in/alexander-castañeda       | https://github.com/iwill88       |
 
 
 <a name="deploy"></a>
