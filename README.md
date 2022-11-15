@@ -52,6 +52,7 @@
 | Mauro Arteaga           | Frontend | https://www.linkedin.com/in/mauro-arteaga-754543241/ | https://github.com/Mauroskyer       |
 | Alexander Castañeda     | Frontend | https://www.linkedin.com/in/alexander-castañeda       | https://github.com/iwill88       |
 | Ivan Belasich     | Frontend | https://www.linkedin.com/in/ivanbelasich      | https://github.com/ivanbelasich       |
+| Mauricio Martin Fontana | Frontend | https://www.linkedin.com/in/mauricio-martin-fontana-a9585a58 | https://github.com/peladoo  |
 
 
 <a name="deploy"></a>
