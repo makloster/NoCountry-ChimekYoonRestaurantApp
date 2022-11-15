@@ -1,12 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Home from './src/screens/Home/Home';
+import { View } from 'react-native';
+import MainStack from './navigation/MainStack';
+/* import FoodMenu from './src/screens/FoodMenu/FoodMenu'; */
 
 export default function App() {
   return (
     <View>
-     <Home />
+      {/* <FoodMenu />*/}
+      <MainStack />
     </View>
   );
 }
-

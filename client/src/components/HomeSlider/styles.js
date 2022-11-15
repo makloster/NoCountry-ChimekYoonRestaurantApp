@@ -1,34 +1,48 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-   backgroundColor: "#22191C",
-   height: "100%",
-   position: "absolute",
-   top: 400
+    backgroundColor: '#22191C',
+    height: '130%',
+    width: '100%',
+    position: 'absolute',
+    top: 300,
+    borderTopStartRadius: 50,
+    borderTopEndRadius: 50,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 12,
+    },
+    shadowOpacity: 1,
+    shadowRadius: 16.0,
+    elevation: 24,
   },
   description: {
-    color: "#FFFFFF"
+    alignItems: 'center',
+    color: '#FFFFFF',
+    paddingLeft: 20,
+    paddingRight: 10,
+    paddingTop: 30,
   },
-
   headingContainer: {
-    paddingTop:50
-  }, 
+    paddingTop: 50,
+  },
   heading1: {
-    color: "#FFFFFF",
-    fontFamily : "Poppins",
+    color: '#FFFFFF',
+    fontFamily: 'Poppins',
     fontSize: 35,
-    fontWeight: "700",
+    fontWeight: '700',
     lineHeight: 50,
-    textAlign: "center"
-
+    textAlign: 'center',
+    justifyContent: 'center',
   },
   heading2: {
-    color: "#EB7828",
-    fontFamily : "Poppins",
+    color: '#EB7828',
+    fontFamily: 'Poppins',
     fontSize: 35,
-    fontWeight: "700",
+    fontWeight: '700',
     lineHeight: 50,
-    textAlign: "center"
-  }
+    textAlign: 'center',
+  },
 });
