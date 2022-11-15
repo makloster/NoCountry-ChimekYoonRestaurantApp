@@ -37,6 +37,7 @@
 
 -   **Node.js**&nbsp; <a href="https://nodejs.org" rel="nofollow"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40" style="max-width: 100%;"> </a>
 -   **Express.js**&nbsp; <a href="https://expressjs.com" rel="nofollow"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40" style="max-width: 100%;"> </a>
+-   **MongoDb**&nbsp; <a href="https://www.mongodb.com/es" rel="nofollow"> <img src="https://nakedsecurity.sophos.com/wp-content/uploads/sites/2/2017/01/mongodb.png?w=775" alt="express" width="40" height="40" style="max-width: 100%;"> </a>
 
 ### **UI/UX**
 
@@ -53,6 +54,7 @@
 | Alexander Castañeda     | Frontend | https://www.linkedin.com/in/alexander-castañeda       | https://github.com/iwill88       |
 | Ivan Belasich     | Frontend | https://www.linkedin.com/in/ivanbelasich      | https://github.com/ivanbelasich       |
 | Mauricio Martin Fontana | Frontend | https://www.linkedin.com/in/mauricio-martin-fontana-a9585a58 | https://github.com/peladoo  |
+| Mario Martinez | Backend | https://www.linkedin.com/in/mario-mtz/ | https://github.com/soymariomtz  |
 
 
 <a name="deploy"></a>
