@@ -1,14 +1,37 @@
 import { View, Text, FlatList, Image } from 'react-native';
 import React from 'react';
+import { styles } from './stylesScrollCategory';
+
 
 const ScrollCategory = () => {
+
+  const categorias = [
+    {
+      id: 1,
+      name: "Chimek",
+      thumbnail:require("../../../assets/Home/principal.png")
+    },
+    {
+      id: 2,
+      name: "Chimek",
+      thumbnail:require("../../../assets/Home/principal.png")
+    },
+    {
+      id: 3,
+      name: "Chimek",
+      thumbnail:require("../../../assets/Home/principal.png")
+    }
+ 
+
+  ]
+
   return (
-    <View>
+    <View style={styles.container}>
       <FlatList
         data={
-          {
-            /*En data va un Array/Json/Api de la ruta de las imagenes*/
-          }
+          
+           categorias
+          
         }
         horizontal={true}
         showsHorizontalScrollIndicator={false}
@@ -17,16 +40,20 @@ const ScrollCategory = () => {
         keyExtractor={(item) => item}
         renderItem={({ item, index }) => {
           return (
-            <View>
-              <View>
-                <Image
-                  source={
-                    {
-                      /* En el Source van las imagenes de la categoria  */
-                    }
-                  }
-                />
-                <Text>{/* AQUI VAN LOS NOMBRES DE LAS CATEGORIAS  */}</Text>
+            <View style={item.id % 2 === 0 ? styles.categoryContainerDark : styles.categoryContainerOrange }>
+              <View style={styles.category} >
+                <View style={styles.imageFrame}>
+                  <Image style={styles.image}
+                    source={
+                        item.thumbnail
+                      }
+                    
+                  />
+                </View>
+                <View >
+                  <Text style={styles.name}>{item.name}</Text>
+                </View>
+                
               </View>
             </View>
           );

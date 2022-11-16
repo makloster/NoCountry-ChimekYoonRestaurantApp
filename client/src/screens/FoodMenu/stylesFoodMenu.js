@@ -14,6 +14,16 @@ export const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 25,
   },
+
+  subTitleContainer: {
+    marginTop: 30,
+    marginBottom: 10,
+    marginLeft: '5%',
+  },
+  subTitle: {
+    color: '#FFFFFF',
+    fontSize: 20,
+  },
   textInput: {
     color: '#FFFFFF',
     marginTop: 25,
