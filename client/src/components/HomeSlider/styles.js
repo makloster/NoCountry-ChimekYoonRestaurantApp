@@ -30,7 +30,6 @@ export const styles = StyleSheet.create({
   },
   heading1: {
     color: '#FFFFFF',
-    fontFamily: 'Poppins',
     fontSize: 35,
     fontWeight: '700',
     lineHeight: 50,
@@ -39,7 +38,6 @@ export const styles = StyleSheet.create({
   },
   heading2: {
     color: '#EB7828',
-    fontFamily: 'Poppins',
     fontSize: 35,
     fontWeight: '700',
     lineHeight: 50,
