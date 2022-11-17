@@ -1,9 +1,13 @@
 import { View, Text } from 'react-native';
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { styles } from './styles';
 import Button from '../Button';
 
-const HomeSlider = ({ navigation }) => {
+
+
+const HomeSlider = () => {
+  const navigation = useNavigation(); 
   return (
     <View style={styles.container}>
       <View style={styles.headingContainer}>
@@ -19,7 +23,7 @@ const HomeSlider = ({ navigation }) => {
         <Button
           text="Inicio"
           onPress={() => {
-            navigation.navigate('Menu');
+            navigation.navigate("MyTabs");
           }}
         />
       </View>

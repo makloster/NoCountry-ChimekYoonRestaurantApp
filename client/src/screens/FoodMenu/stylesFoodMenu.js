@@ -36,6 +36,13 @@ export const styles = StyleSheet.create({
     borderRadius: 30,
     paddingLeft: 10,
   },
+  hamburgerMenuContainer: {
+    alignItems: 'center',
+    width: 40,
+    height: 40,
+    position: 'absolute',
+    top: 60,
+    left: '5%',
+  },
   logo: { position: 'absolute', top: 45, right: '5%' },
-  hamburgerMenu: { position: 'absolute', top: 60, left: '5%' },
 });
