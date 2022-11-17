@@ -2,8 +2,13 @@ import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native';
 import { styles } from './stylesScrollMenu';
 import React from 'react';
 import Counter from '../Counter/Counter';
+import { useNavigation } from '@react-navigation/native';
 
-const ScrollMenu = () => {
+
+const ScrollMenu = ({ onPressPlus, onPressMinus, valueQuantity }) => {
+
+  const navigation = useNavigation(); 
+
   const menu = [
     {
       id: 1,
@@ -54,14 +59,22 @@ const ScrollMenu = () => {
         return (
           <View key={item.id} style={styles.container}>
             <View style={styles.containerDish}>
-              <TouchableOpacity style={styles.imageFrame}>
-                <Image style={styles.image} source={item.thumbnail} />
+              <TouchableOpacity style={styles.imageFrame}
+              onPress={() => {
+                navigation.navigate("ItemDetail");
+              }}
+              >
+                <Image style={styles.image} source={item.thumbnail} 
+                
+                />
               </TouchableOpacity>
-              <View style={styles.containerText}>
+              <View style={styles.containerText}
+              
+              >
                 <Text style={styles.nameText}>{item.name}</Text>
                 <Text style={styles.valueText}>{item.precio}</Text>
               </View>
-              <Counter />
+              <Counter/>
             </View>
           </View>
         );

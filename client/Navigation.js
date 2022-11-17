@@ -10,6 +10,7 @@ import { Image, Text } from 'react-native';
 import HomeLogo from './assets/Navigation/Home.png';
 import ShopLogo from './assets/Navigation/Shop.png';
 import ShoppingCart from './src/screens/ShoppingCart/ShoppingCart';
+import ItemDetailContainer from './src/components/FoodMenu/ItemDetailContainer/ItemDetailContainer';
 
 // screens
 
@@ -72,7 +73,9 @@ export default function Navigation() {
       >
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="MyTabs" component={MyTabs} />
+        <Stack.Screen name="ItemDetail" component={ItemDetailContainer} />
       </Stack.Navigator>
     </NavigationContainer>
+    
   );
 }

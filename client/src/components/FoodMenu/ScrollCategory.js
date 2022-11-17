@@ -53,6 +53,8 @@ const ScrollCategory = () => {
                   ? styles.categoryContainerDark
                   : styles.categoryContainerOrange
               }
+
+              
             >
               <View style={styles.category}>
                 <View style={styles.imageFrame}>
