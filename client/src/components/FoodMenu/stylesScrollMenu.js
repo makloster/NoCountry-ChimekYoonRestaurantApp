@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
   containerDish: {
     paddingLeft: '5%',
     width: '100%',
-    height: 150,
+    height: 130,
     flexDirection: 'row',
     alignItems: 'center',
   },

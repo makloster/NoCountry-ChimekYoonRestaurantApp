@@ -1,13 +1,15 @@
-import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import FoodMenu from "./src/screens/FoodMenu/FoodMenu";
-import Home from "./src/screens/Home/Home";
-import { Image, Text } from "react-native";
-import HomeLogo from "./assets/Navigation/Home.png";
-import ShopLogo from "./assets/Navigation/Shop.png";
-import ShoppingCart from "./src/screens/ShoppingCart/ShoppingCart";
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import 'react-native-gesture-handler';
+import FoodMenu from './src/screens/FoodMenu/FoodMenu';
+import Home from './src/screens/Home/Home';
+import { Image, Text } from 'react-native';
+import HomeLogo from './assets/Navigation/Home.png';
+import ShopLogo from './assets/Navigation/Shop.png';
+import ShoppingCart from './src/screens/ShoppingCart/ShoppingCart';
 
 // screens
 
@@ -15,8 +17,8 @@ const Tab = createBottomTabNavigator();
 
 const screenOptions = () => ({
   tabBarStyle: {
-    backgroundColor: "#22191C",
-    height: 80,
+    backgroundColor: '#22191C',
+    height: 60,
   },
   tabBarLabel: () => {
     return null;
@@ -44,6 +46,16 @@ function MyTabs() {
         component={ShoppingCart}
       />
     </Tab.Navigator>
+  );
+}
+
+const Menu = createDrawerNavigator();
+
+function HamburguerMenu() {
+  return (
+    <Menu.Navigator initialRouteName="FoodMenu">
+      <Menu.Screen name="Home" component={Home} />
+    </Menu.Navigator>
   );
 }
 
