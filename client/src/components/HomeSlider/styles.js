@@ -43,4 +43,18 @@ export const styles = StyleSheet.create({
     lineHeight: 50,
     textAlign: 'center',
   },
+  homeBtn: {
+    backgroundColor: '#EB7828',
+    width: 200,
+    height: 50,
+    borderRadius: 50,
+    alignItems: 'center',
+    paddingTop: 10,
+    marginLeft: '25%',
+    marginTop: '20%',
+  },
+  textBtn: {
+    color: '#FFFFFF',
+    fontSize: 25,
+  },
 });

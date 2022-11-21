@@ -4,10 +4,8 @@ import { useNavigation } from '@react-navigation/native';
 import { styles } from './styles';
 import Button from '../Button';
 
-
-
 const HomeSlider = () => {
-  const navigation = useNavigation(); 
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.headingContainer}>
@@ -22,8 +20,10 @@ const HomeSlider = () => {
       <View>
         <Button
           text="Inicio"
+          styleBtn={styles.homeBtn}
+          styleTextBtn={styles.textBtn}
           onPress={() => {
-            navigation.navigate("MyTabs");
+            navigation.navigate('MyTabs');
           }}
         />
       </View>
