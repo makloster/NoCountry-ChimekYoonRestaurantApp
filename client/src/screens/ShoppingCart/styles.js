@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
   containerLogo: {
     paddingRight: '95%',
     paddingTop: '5%',
-    marginBottom: '30%',
+    marginBottom: '15%',
   },
   textInput: {
     color: '#FFFFFF',
@@ -35,9 +35,14 @@ export const styles = StyleSheet.create({
   },
   addNoteBtn: {
     width: '100%',
-    height: '100%',
+    height: '70%',
     alignItems: 'center',
     paddingTop: '8%',
+    borderColor: '#D6D6D6',
+    borderTopWidth: 0.8,
+    borderBottomWidth: 0.8,
+    paddingRight: '57%',
+    paddingTop: '6%',
   },
   textBtn: { color: '#9F9B9B', fontSize: 20 },
   containerAddNote: {
@@ -75,7 +80,7 @@ export const styles = StyleSheet.create({
   containerTotalOrder: {
     flexDirection: 'row',
     width: '100%',
-    height: '3%',
+    height: '6%',
   },
   totalOrder: {
     color: '#FFFFFF',

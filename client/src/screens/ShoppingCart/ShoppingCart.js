@@ -35,12 +35,9 @@ const ShoppingCart = () => {
         <View style={styles.containerLogo}>
           <Image style={styles.logo} source={chimekYoonIcon} />
         </View>
-        <ScrollMenu />
+        <ScrollMenu active={true} />
       </>
-      <View style={styles.containerTotalOrder}>
-        <Text style={styles.totalOrder}>Total del pedido :</Text>
-        <Text style={styles.totalValueOrder}>Total del pedido</Text>
-      </View>
+
       <View style={styles.containerFootherShoppingCart}>
         {touchAddNote ? (
           <AddNote
@@ -63,6 +60,10 @@ const ShoppingCart = () => {
             styleTextBtn={styles.textBtn}
           />
         )}
+      </View>
+      <View style={styles.containerTotalOrder}>
+        <Text style={styles.totalOrder}>Total del pedido :</Text>
+        <Text style={styles.totalValueOrder}>Total del pedido</Text>
       </View>
       <FootherBtns
         styleContainerFootherBtns={styles.footherBtns}

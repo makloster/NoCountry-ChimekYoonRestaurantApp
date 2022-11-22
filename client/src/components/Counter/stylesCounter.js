@@ -1,16 +1,13 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  
   containerQuantity: {
     flexDirection: 'column',
     marginLeft: '25%',
-   
   },
   containerQuantityHorizontal: {
     flexDirection: 'row',
-    alignSelf:'center'
-   
+    alignSelf: 'center',
   },
   increaseBtn: {
     borderRadius: 30,
@@ -19,12 +16,34 @@ export const styles = StyleSheet.create({
     backgroundColor: '#FCA162',
     alignItems: 'center',
   },
+  increaseBtnHorizontal: {
+    borderRadius: 30,
+    width: 40,
+    height: 40,
+    backgroundColor: '#FCA162',
+    alignItems: 'center',
+  },
+  decreaseBtnHorizontal: {
+    borderRadius: 30,
+    width: 40,
+    height: 40,
+    backgroundColor: '#C0C0C0',
+    alignItems: 'center',
+    textAlign: 'center',
+  },
   decreaseBtn: {
     borderRadius: 30,
     width: 40,
     height: 40,
     backgroundColor: '#FFFFFF',
     alignItems: 'center',
+  },
+  containerValueQuantityHorizontal: {
+    width: 40,
+    height: 40,
+    alignItems: 'center',
+    marginLeft: '5%',
+    marginRight: '5%',
   },
   containerValueQuantity: {
     width: 40,
@@ -36,7 +55,6 @@ export const styles = StyleSheet.create({
     width: 40,
     height: 40,
     alignItems: 'center',
- 
   },
   plusText: {
     borderRadius: 30,
@@ -45,7 +63,15 @@ export const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 30,
     paddingLeft: '29%',
-    
+  },
+  minusTextHorizontal: {
+    borderRadius: 30,
+    width: 40,
+    height: 40,
+    color: '#050404',
+    fontSize: 30,
+    alignItems: 'center',
+    textAlign: 'center',
   },
   minusText: {
     borderRadius: 30,
