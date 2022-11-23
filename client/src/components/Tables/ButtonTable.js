@@ -1,11 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
-import { useState } from 'react';
 
 
 const ButtonTable = (props) => {
-    const { onPress, text } = props;
-    const [btnActive, setBtnActive] = useState(false);
+    const { onPress, text, btnActive } = props;
+    
 
   return (
     <TouchableOpacity onPress={onPress} style={
@@ -26,17 +25,21 @@ tableBtn:{
     borderRadius: 50,
     alignItems: 'center',
     paddingTop: 10,
-    marginTop: '20%',
+    position:'absolute',
+    top:660
+    
 },
 tableBtnDisabled: {
+    
     backgroundColor: '#BF8C69',
     width: 236,
     height: 50,
     borderRadius: 50,
     alignItems: 'center',
     paddingTop: 10,
+    position:'absolute',
+    top:660
    
-    marginTop: '20%',
   },
   textBtn: {
     color: '#FFFFFF',
