@@ -4,10 +4,8 @@ import React from 'react';
 import Counter from '../Counter/Counter';
 import { useNavigation } from '@react-navigation/native';
 
-
-const ScrollMenu = ({ onPressPlus, onPressMinus, valueQuantity }) => {
-
-  const navigation = useNavigation(); 
+const ScrollMenu = ({ onPressPlus, onPressMinus, valueQuantity, active }) => {
+  const navigation = useNavigation();
 
   const menu = [
     {
@@ -57,24 +55,39 @@ const ScrollMenu = ({ onPressPlus, onPressMinus, valueQuantity }) => {
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => {
         return (
-          <View key={item.id} style={styles.container}>
-            <View style={styles.containerDish}>
-              <TouchableOpacity style={styles.imageFrame}
-              onPress={() => {
-                navigation.navigate("ItemDetail");
-              }}
+          <View
+            key={item.id}
+            style={active ? styles.containerHorizontal : styles.container}
+          >
+            <View
+              style={
+                active ? styles.containerDishHorizontal : styles.containerDish
+              }
+            >
+              <TouchableOpacity
+                style={active ? styles.imageFrameHorizontal : styles.imageFrame}
+                onPress={() => {
+                  navigation.navigate('ItemDetail');
+                }}
               >
-                <Image style={styles.image} source={item.thumbnail} 
-                
+                <Image
+                  style={active ? styles.imageHorizontal : styles.image}
+                  source={item.thumbnail}
                 />
               </TouchableOpacity>
-              <View style={styles.containerText}
-              
+              <View
+                style={
+                  active ? styles.containerTextHorizontal : styles.containerText
+                }
               >
-                <Text style={styles.nameText}>{item.name}</Text>
+                <Text
+                  style={active ? styles.nameTextHorizontal : styles.nameText}
+                >
+                  {item.name}
+                </Text>
                 <Text style={styles.valueText}>{item.precio}</Text>
               </View>
-              <Counter/>
+              <Counter active={active} />
             </View>
           </View>
         );

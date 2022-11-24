@@ -37,7 +37,7 @@ const FoodMenu = ({ navigation }) => {
         <Text style={styles.subTitle}>Categorías</Text>
       </View>
       <ScrollCategory />
-      <ScrollMenu />
+      <ScrollMenu active={false} />
     </SafeAreaView>
   );
 };
