@@ -7,16 +7,19 @@ const categoriesSchema = mongoose.Schema(
       trim: true,
       required: true,
     },
-    items: {
-      type: Array,
-      required: true,
-    },
+    items: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Item',
+        required: true
+      }
+    ]
   },
   {
     timestamps: true,
   }
 )
 
-const categoryCreated = mongoose.model("Category", categoriesSchema)
+const categoryCreated = mongoose.model('Category', categoriesSchema)
 
 export default categoryCreated
