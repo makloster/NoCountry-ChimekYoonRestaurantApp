@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+const mongoose = require('mongoose')
 
 const orderSchema = mongoose.Schema(
   {
@@ -17,10 +17,10 @@ const orderSchema = mongoose.Schema(
       enum: ['Mañana', 'Tarde', 'Noche'], // consultar al cliente
       required: true
     },
-    orders: [
+    items: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Order'
+        ref: 'Items'
       }
     ],
     priceTotal: {
