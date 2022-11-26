@@ -6,9 +6,9 @@ const usersSchema = mongoose.Schema({
     require: true,
     trim: true,
   },
-  password: {
+  password: { // solo ADMIN
     type: String,
-    require: true,
+    require: false,
     trim: true,
   },
   email: {
@@ -20,9 +20,10 @@ const usersSchema = mongoose.Schema({
   token: {
     type: String,
   },
-  admin: {
-    type: Boolean,
-    default: false,
+  userType: {
+    type: String,
+    enum : ['Client','Waiter', 'Admin'],
+    default: 'Client'
   }
 }, {
   timestamps: true,

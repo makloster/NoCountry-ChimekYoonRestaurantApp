@@ -5,7 +5,7 @@ const {handleHttpError} = require('../../utils/handleError')
 
 const create = async (req, res) => {
     try {
-        const {username, password, email} = req.body
+        const {username, password, email, userType} = req.body
 
         const salt = await bcrypt.genSalt(10);
         const hashPassword = await bcrypt.hash(password, salt,);
@@ -20,11 +20,11 @@ const create = async (req, res) => {
         const newUser = new userCreated({
         username,
         email,
-        password: hashPassword,    
+        password: hashPassword,
+        userType    
         });
 
         newUser.save()
-
     
         res.status(200).json({
         status: "success",
@@ -41,22 +41,23 @@ const login = async (req,res) => {
 
     try {
 
-        const { username, password } = req.body;
+        const { email, password } = req.body;
 
     
         const user = await userCreated.find({
-            username
+            email
         })
 
 
-        if (!user) {
-            return handleHttpError(res, "USER_&_PASSWORD ARE NOT VALID", 400);
+        if (user[0].userType !== 'Admin') {
+            return handleHttpError(res, "USER IS NOT ADMIN", 400);
         }
 
         const passOkay = await bcrypt.compare(password, user[0].password)
+
         
         if (!passOkay) {
-            return handleHttpError(res, "USER_&_PASSWORD ARE NOT VALID", 400);
+            return handleHttpError(res, "EMAIL_&_PASSWORD ARE NOT VALID", 400);
         }
 
         const token = jwt.sign(
@@ -74,7 +75,8 @@ const login = async (req,res) => {
         })
         
     } catch (error) {
-        handleHttpError(res, 'ERROR_LOGIN', 500)
+        // handleHttpError(res, 'ERROR_LOGIN', 500)
+        res.json(error.message)
     }
 }
 
