@@ -75,8 +75,7 @@ const login = async (req,res) => {
         })
         
     } catch (error) {
-        // handleHttpError(res, 'ERROR_LOGIN', 500)
-        res.json(error.message)
+        handleHttpError(res, 'ERROR_LOGIN', 500)
     }
 }
 
