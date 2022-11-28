@@ -1,21 +1,33 @@
 const {itemCreated} = require('./items.model')
 const {handleHttpError} = require('../../utils/handleError')
+const {ref, uploadBytes, getDownloadURL} = require('firebase/storage');
+const { storage } = require('../../utils/firebase');
 
 const createItem = async (req, res) => {
     try {
         const {name, price, description} = req.body
+        
+        const imgFilename = ref(storage, `${Date.now()}_img_${req.file.originalname}`)
+        
+        const imgUpload= await uploadBytes(imgFilename, req.file.buffer)
+            
+        const imgFirebase = ref(storage, imgUpload.metadata.name)
+        
+        const imgDownload = await getDownloadURL(imgFirebase)
+
 
         const item = new itemCreated({
             name,
             price,
-            description
+            description,
+            image: imgDownload
         })
 
         await item.save()
 
         res.status(200).json({
             message: 'Item created',
-            item
+            item,
         })
 
 
@@ -66,9 +78,18 @@ const updateItem = async (req, res) => {
         const {id} = req.params
         const {name, price, description} = req.body
 
+
+        const imgFilename = ref(storage, `${Date.now()}_img_${req.file.originalname}`)
+        
+        const imgUpload= await uploadBytes(imgFilename, req.file.buffer)
+            
+        const imgFirebase = ref(storage, imgUpload.metadata.name)
+        
+        const imgDownload = await getDownloadURL(imgFirebase)
+
         const item = await itemCreated.findByIdAndUpdate(
             id,
-            {name, price, description}
+            {name, price, description, image: imgDownload}
         )
 
         if(!item){
@@ -79,7 +100,7 @@ const updateItem = async (req, res) => {
 
         res.status(200).json({
             message: 'Item updated',
-            newdata: {name, price, description},
+            newdata: {name, price, description, image:imgDownload},
             item
         })
 
