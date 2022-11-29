@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import BtnCancel from './btnCancel';
+import { View } from 'react-native';
+import BtnCancel from './BtnCancel';
 import BtnSafe from './BtnSafe';
 
 const Foother = (props) => {
