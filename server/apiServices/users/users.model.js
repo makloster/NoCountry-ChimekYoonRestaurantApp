@@ -1,5 +1,4 @@
-const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
+const mongoose = require( "mongoose")
 
 const usersSchema = mongoose.Schema({
   username: {
@@ -30,5 +29,6 @@ const usersSchema = mongoose.Schema({
   timestamps: true,
 })
 
-const userCreated = mongoose.model('User', usersSchema)
-export default userCreated
+const userCreated = mongoose.model("User", usersSchema)
+
+module.exports = {userCreated}
