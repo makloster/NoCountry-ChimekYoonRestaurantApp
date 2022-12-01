@@ -1,11 +1,12 @@
+const { handleHttpError } = require('../../utils/handleError')
 const Order = require('./orders.model')
 
 const getOrders = async (req, res) => {
   try {
-    const orderList = await Order.find().populate('items')
+    const orderList = await Order.find()
     res.json(orderList)
   } catch (error) {
-    console.log(error)
+    handleHttpError(res, 'ERROR_GET_ORDERS', 500)
   }
 }
 

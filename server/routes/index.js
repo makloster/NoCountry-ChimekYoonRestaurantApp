@@ -1,7 +1,7 @@
 const express = require("express")
 const { viewsRouter } = require("../apiServices/views/views.routes")
-const { itemRouter } = require("../apiServices/items/items.routes")
 const { userRouter } = require('../apiServices/users/users.routes')
+const { itemRouter } = require("../apiServices/items/items.routes")
 const { orderRouter } = require('../apiServices/orders/orders.routes')
 
 const router = express.Router()
