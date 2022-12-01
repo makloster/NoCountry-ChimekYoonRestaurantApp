@@ -12,10 +12,9 @@ const getOrders = async (req, res) => {
 
 // ToDo
 const newOrder = async (req, res) => {
-  const { bookId } = req.body
-  const book = await Book.findById(bookId)
+  const { OrderID } = req.body
+  const newOrder = await Order.findById(OrderID)
   const order = new Order({
-
     books: book._id
   })
   order.comprador = req.usuario._id
@@ -61,8 +60,8 @@ const deleteOrder = async (req, res) => {
 }
 
 export {
-  newOrder,
   getOrders,
+  newOrder,
   detailOrder,
   updateOrder,
   deleteOrder
