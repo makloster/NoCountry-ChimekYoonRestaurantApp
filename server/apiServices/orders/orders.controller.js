@@ -1,10 +1,9 @@
-const Order = require('./orders.model.js')
+const Order = require('./orders.model')
 
 const getOrders = async (req, res) => {
   try {
-    const { id } = req.params
-    const orders = await Order.find({ table: id }).populate('items')
-    res.json(orders)
+    const orderList = await Order.find().populate('items')
+    res.json(orderList)
   } catch (error) {
     console.log(error)
   }
@@ -12,8 +11,8 @@ const getOrders = async (req, res) => {
 
 // ToDo
 const newOrder = async (req, res) => {
-  const { OrderID } = req.body
-  const newOrder = await Order.findById(OrderID)
+  const { orderID } = req.body
+  const newOrder = await Order.findById(orderID)
   const order = new Order({
     books: book._id
   })
@@ -59,7 +58,7 @@ const deleteOrder = async (req, res) => {
   }
 }
 
-export {
+module.exports = {
   getOrders,
   newOrder,
   detailOrder,

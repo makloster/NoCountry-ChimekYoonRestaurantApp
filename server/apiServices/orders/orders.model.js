@@ -30,16 +30,16 @@ const orderSchema = mongoose.Schema(
     notes: {
       type: String,
       trim: true,
-    },    
+    },
     state: {
       type: String,
-      enum: ['Pendiente', 'Pagado', 'Cancelado'],      
+      enum: ['Pendiente', 'Pagado', 'Cancelado'],
       required: true,
       default: 'Pendiente'
-    },    
+    },
   }, {
   timestamps: true,
 })
 
 const OrderCreated = mongoose.model('Order', orderSchema)
-export default OrderCreated
+module.exports = { OrderCreated }
