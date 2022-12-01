@@ -12,6 +12,9 @@ import ShopLogo from './assets/Navigation/Shop.png';
 import ShoppingCart from './src/screens/ShoppingCart/ShoppingCart';
 import ItemDetailContainer from './src/components/FoodMenu/ItemDetailContainer/ItemDetailContainer';
 import Tables from './src/components/Tables/Tables';
+import StatusScreen from './src/screens/Status/Status';
+
+
 
 // screens
 
@@ -70,12 +73,14 @@ export default function Navigation() {
         screenOptions={{
           headerShown: false,
         }}
-        initialRouteName="Tables"
+        initialRouteName="Home"
       >
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="MyTabs" component={MyTabs} />
         <Stack.Screen name="ItemDetail" component={ItemDetailContainer} />
         <Stack.Screen name="Tables" component={Tables} />
+        <Stack.Screen name="StatusTables" component={StatusScreen} />
+
       </Stack.Navigator>
     </NavigationContainer>
   

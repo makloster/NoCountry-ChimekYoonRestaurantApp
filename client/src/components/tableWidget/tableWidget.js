@@ -1,18 +1,25 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { styles } from './stylesTableWidget';
-import Tables from '../Tables/Tables';
+import { useNavigation } from '@react-navigation/native';
 
 
 const TableWidget = () => {
 
+    const navigation = useNavigation();
     
     return (
-        <View style={styles.widgetContainer}>
+        <TouchableOpacity 
+            style={styles.widgetContainer}
+            onPress={()=>{
+                navigation.navigate('StatusTables')
+            }}
+            
+            >
             <View style={styles.state}></View>
             <Image source={require('../../../assets/Icons/tableWhite.png')} />
             <Text style={styles.tableName}>1</Text>
-        </View>
+        </TouchableOpacity>
     );
 }
 

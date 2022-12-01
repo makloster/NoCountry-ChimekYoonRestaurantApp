@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
     borderRadius: 50,
     width: 100,
     height: 100,
-    marginRight: '20%',
+    marginRight: '10%',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -56,7 +56,7 @@ export const styles = StyleSheet.create({
     borderRadius: 50,
     width: '100%',
     height: '100%',
-    marginLeft: '30%',
+    marginLeft: '10%',
   },
   image: {
     borderRadius: 50,
