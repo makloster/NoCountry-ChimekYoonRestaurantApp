@@ -1,8 +1,16 @@
 const express = require('express')
-const { create, login } = require('./users.controller')
+const { addWaiter, getWaiters, waiterDetail, deleteWaiter } = require('./waiters.controller')
+
 const waiterRouter = express.Router()
 
-waiterRouter.post('/register', create)
-waiterRouter.post('/login', login)
+waiterRouter
+  .route('/')
+  .get(getWaiters)
+  .post(addWaiter)
+  
+  waiterRouter
+  .route('/:id')
+  .get(waiterDetail)
+  .delete(deleteWaiter)
 
 module.exports = { waiterRouter }

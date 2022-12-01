@@ -38,14 +38,40 @@ const getWaiters = async (req, res) => {
   }
 }
 
+const waiterDetail = async (req, res) => {
+  try {
+    const { id } = req.params
+    const getID = await Waiter.findById({
+      _id: id
+    })
+
+    if (!getID) {
+      return res.status(404).json({
+        message: 'Waiter not found'
+      })
+    }
+
+    res.json({
+      message: 'Waiter found',
+      getID
+    })
+
+  } catch (error) {
+    handleHttpError(res, 'ERROR_GET_WAITER', 500)
+  }
+}
+
 const deleteWaiter = async (req, res) => {
   try {
     const { id } = req.params
     const waiterID = await Waiter.findOneAndDelete({ _id: id })
-    res.json({ waiterID })
+    res.json({
+      message: 'Waiter deleted',
+      waiterID
+    })
   } catch (error) {
-    handleHttpError(res, 'ERROR_DELETE_WAITERS', 500)
+    handleHttpError(res, 'ERROR_DELETE_WAITER', 500)
   }
 }
 
-module.exports = { addWaiter, getWaiters, deleteWaiter }
+module.exports = { addWaiter, getWaiters, waiterDetail, deleteWaiter }
