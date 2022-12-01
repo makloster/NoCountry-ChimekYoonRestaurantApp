@@ -9,7 +9,10 @@ const orderSchema = mongoose.Schema(
     },
     waiter: {
       type: String,
-      enum: ['Cacho', 'Pepe', 'Tito'], // cómo agregamos un array que se pueda cambiar? otro model?
+      enum: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Waiter'
+      }],
       required: true
     },
     turn: {
@@ -20,7 +23,7 @@ const orderSchema = mongoose.Schema(
     items: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Items'
+        ref: 'Item'
       }
     ],
     priceTotal: {

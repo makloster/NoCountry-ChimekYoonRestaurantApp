@@ -1,18 +1,19 @@
-const express = require("express")
-const { viewsRouter } = require("../apiServices/views/views.routes")
+const express = require('express')
+const { viewsRouter } = require('../apiServices/views/views.routes')
+const { itemRouter } = require('../apiServices/items/items.routes')
 const { userRouter } = require('../apiServices/users/users.routes')
-const { itemRouter } = require("../apiServices/items/items.routes")
+const { waiterRouter } = require('../apiServices/waiters/waiters.routes')
 const { orderRouter } = require('../apiServices/orders/orders.routes')
 
 const router = express.Router()
 
 //Endpoints
 router.use('/auth', userRouter)
-router.use("/item", itemRouter)
+router.use('/item', itemRouter)
+router.use('/waiter', waiterRouter)
 router.use('/order', orderRouter)
 
-
 // for rendering the public folder
-router.use("/", viewsRouter)
+router.use('/', viewsRouter)
 
 module.exports = { router }
