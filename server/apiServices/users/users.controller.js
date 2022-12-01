@@ -24,7 +24,7 @@ const create = async (req, res) => {
         userType    
         });
 
-        newUser.save()
+        await newUser.save()
     
         res.status(200).json({
         status: "success",

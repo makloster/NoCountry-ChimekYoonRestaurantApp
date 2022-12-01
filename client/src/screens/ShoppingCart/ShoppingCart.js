@@ -17,6 +17,7 @@ const ShoppingCart = () => {
   const [note, setNote] = useState(null);
   /* Estado del total del pedido  */
   const [total, setTotal] = useState(null);
+  const [confirmation, setConfirmation] = useState(false);
   const onPressAddNote = () => {
     setTouchAddNote(!touchAddNote);
   };
@@ -26,8 +27,13 @@ const ShoppingCart = () => {
   };
 
   const onPressSuccess = () => {
+    
     /* Mandar por redux o hacer pedido al Back */
   };
+
+  const onPressConfirmation = () =>{
+    setConfirmation(true)
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -73,6 +79,9 @@ const ShoppingCart = () => {
         styleTextConfirmBtn={styles.textConfirmBtn}
         textAddBtn={textAddBtn}
         textConfirmBtn={textConfirmBtn}
+        confirmation={confirmation}
+        onPressConfirmation={onPressConfirmation}
+        setConfirmation={setConfirmation}
       />
     </SafeAreaView>
   );

@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import ScrollCategory from '../../components/FoodMenu/ScrollCategory';
 import ScrollMenu from '../../components/FoodMenu/ScrollMenu';
+import TableWidget from '../../components/tableWidget/tableWidget';
 import { styles } from './stylesFoodMenu';
 
 const FoodMenu = ({ navigation }) => {
@@ -26,6 +27,7 @@ const FoodMenu = ({ navigation }) => {
       <Image style={styles.logo} source={chimekYoonIcon} />
       <View style={styles.titleContainer}>
         <Text style={styles.title}>Reserva tu comida</Text>
+        <TableWidget/>
       </View>
 
       <TextInput

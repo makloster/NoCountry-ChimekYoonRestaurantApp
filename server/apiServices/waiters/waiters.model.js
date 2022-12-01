@@ -12,12 +12,18 @@ const waitersSchema = mongoose.Schema(
       trim: true,
       required: true,
     },
+    email: {
+      type: String,
+      require: true,
+      trim: true,
+      unique: true,
+    },
   },
   {
     timestamps: true,
   }
 )
 
-const waiterCreated = mongoose.model('Waiter', waitersSchema)
+const Waiter = mongoose.model('Waiter', waitersSchema)
 
-module.exports = { waiterCreated }
+module.exports = { Waiter }

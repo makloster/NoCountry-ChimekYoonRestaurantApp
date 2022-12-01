@@ -20,7 +20,7 @@ const itemsSchema = mongoose.Schema(
     image: {
       type: String,
       trim: true,
-      required: true,
+      required: false,
     },
     inMenu: {
       type: Boolean,
@@ -41,4 +41,5 @@ const itemsSchema = mongoose.Schema(
 )
 
 const itemCreated = mongoose.model('Item', itemsSchema)
-export default itemCreated
+
+module.exports = {itemCreated}

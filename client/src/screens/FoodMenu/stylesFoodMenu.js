@@ -9,6 +9,10 @@ export const styles = StyleSheet.create({
   titleContainer: {
     marginTop: 100,
     marginLeft: '5%',
+    marginRight: '5%',
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'space-between'
   },
   title: {
     color: '#FFFFFF',

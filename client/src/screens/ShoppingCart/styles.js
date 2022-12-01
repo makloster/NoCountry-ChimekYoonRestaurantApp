@@ -18,11 +18,11 @@ export const styles = StyleSheet.create({
   },
   textInput: {
     color: '#FFFFFF',
-    marginTop: 25,
-    marginLeft: '5%',
+    marginTop: '3%',
+    marginLeft: '1%',
     marginRight: 'auto',
-    width: 300,
-    height: 40,
+    width: '70%',
+    height: '50%',
     borderColor: '#FFFFFF',
     borderWidth: 1,
     borderRadius: 30,
@@ -52,7 +52,8 @@ export const styles = StyleSheet.create({
   btnSection: {
     flexDirection: 'column',
     alignItems: 'center',
-    marginLeft: '10%',
+    marginLeft: '5%',
+    marginRight: '3%',
   },
   successBtn: {
     backgroundColor: '#008f39',
@@ -98,8 +99,8 @@ export const styles = StyleSheet.create({
     height: '15%',
   },
   addBtn: {
-    width: 210,
-    height: 100,
+    width: '50%',
+    height: '50%',
     backgroundColor: '#EB7828',
   },
   textAddBtn: {
@@ -111,8 +112,8 @@ export const styles = StyleSheet.create({
   confirmBtn: {
     borderLeftColor: '#FFFFFF',
     borderLeftWidth: 1,
-    width: 220,
-    height: 100,
+    width: '50%',
+    height: '50%',
     backgroundColor: '#EB7828',
   },
   textConfirmBtn: {
