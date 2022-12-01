@@ -6,21 +6,31 @@ const { storage } = require('../../utils/firebase');
 const createItem = async (req, res) => {
     try {
         const {name, price, description} = req.body
-        
-        const imgFilename = ref(storage, `${Date.now()}_img_${req.file.originalname}`)
-        
-        const imgUpload= await uploadBytes(imgFilename, req.file.buffer)
-            
-        const imgFirebase = ref(storage, imgUpload.metadata.name)
-        
-        const imgDownload = await getDownloadURL(imgFirebase)
 
+        let imgItem;
+
+        if(!req.file){
+            imgItem = 'default.png'
+        }else{
+            imgItem = req.file.originalname
+
+            const imgFilename = ref(storage, `${Date.now()}_img_${imgItem}`)
+            
+            const imgUpload= await uploadBytes(imgFilename, req.file.buffer)
+
+            const imgFirebase = ref(storage, imgUpload.metadata.name)
+
+            const imgDownload = await getDownloadURL(imgFirebase)
+            
+            imgItem = imgDownload
+        }
+        
 
         const item = new itemCreated({
             name,
             price,
             description,
-            image: imgDownload
+            image: imgItem
         })
 
         await item.save()
@@ -29,6 +39,7 @@ const createItem = async (req, res) => {
             message: 'Item created',
             item,
         })
+        
 
 
     } catch (error) {
@@ -79,17 +90,27 @@ const updateItem = async (req, res) => {
         const {name, price, description} = req.body
 
 
-        const imgFilename = ref(storage, `${Date.now()}_img_${req.file.originalname}`)
-        
-        const imgUpload= await uploadBytes(imgFilename, req.file.buffer)
+        let imgItem;
+
+        if(!req.file){
+            imgItem = 'default.png'
+        }else{
+            imgItem = req.file.originalname
+
+            const imgFilename = ref(storage, `${Date.now()}_img_${imgItem}`)
             
-        const imgFirebase = ref(storage, imgUpload.metadata.name)
-        
-        const imgDownload = await getDownloadURL(imgFirebase)
+            const imgUpload= await uploadBytes(imgFilename, req.file.buffer)
+
+            const imgFirebase = ref(storage, imgUpload.metadata.name)
+
+            const imgDownload = await getDownloadURL(imgFirebase)
+            
+            imgItem = imgDownload
+        }
 
         const item = await itemCreated.findByIdAndUpdate(
             id,
-            {name, price, description, image: imgDownload}
+            {name, price, description, image: imgItem}
         )
 
         if(!item){
@@ -100,7 +121,7 @@ const updateItem = async (req, res) => {
 
         res.status(200).json({
             message: 'Item updated',
-            newdata: {name, price, description, image:imgDownload},
+            newdata: {name, price, description, image:imgItem},
             item
         })
 
