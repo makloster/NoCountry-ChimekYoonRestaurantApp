@@ -1,7 +1,7 @@
 const express = require('express')
 const {
   getOrders,
-  newOrder,
+  addOrder,
   detailOrder,
   updateOrder,
   deleteOrder
@@ -11,10 +11,10 @@ const orderRouter = express.Router()
 orderRouter
   .route('/')
   .get(getOrders)
-  .post(newOrder)
+  .post(addOrder)
 
 orderRouter
-  .route('/detail/:id')
+  .route('/:id')
   .get(detailOrder)
   .patch(updateOrder)
   .delete(deleteOrder)

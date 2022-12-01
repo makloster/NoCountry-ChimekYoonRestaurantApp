@@ -41,5 +41,5 @@ const orderSchema = mongoose.Schema(
   timestamps: true,
 })
 
-const OrderCreated = mongoose.model('Order', orderSchema)
-module.exports = { OrderCreated }
+const Order = mongoose.model('Order', orderSchema)
+module.exports = { Order }

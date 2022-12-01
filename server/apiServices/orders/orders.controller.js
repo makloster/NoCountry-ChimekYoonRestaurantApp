@@ -1,5 +1,5 @@
 const { handleHttpError } = require('../../utils/handleError')
-const Order = require('./orders.model')
+const { Order } = require('./orders.model')
 
 const getOrders = async (req, res) => {
   try {
@@ -10,29 +10,20 @@ const getOrders = async (req, res) => {
   }
 }
 
-// ToDo
-const newOrder = async (req, res) => {
-  const { orderID } = req.body
-  const newOrder = await Order.findById(orderID)
-  const order = new Order({
-    books: book._id
-  })
-  order.comprador = req.usuario._id
+const addOrder = async (req, res) => {
   try {
-    const orderAlmacenada = await order.save()
-    book.order = book.order.concat(orderAlmacenada._id)
-    await book.save()
-    res.status(201).json(orderAlmacenada);
+    const newOrder = new Order(req.body)
+    const orderCreated = await newOrder.save()
+    res.status(201).json(orderCreated)
   } catch (error) {
-    console.log(error)
+    handleHttpError(res, 'ERROR_CREATE_ORDER', 500)
   }
 }
 
-// ToDo
 const detailOrder = async (req, res) => {
   try {
-    const { id } = req.params
-    const order = await Order.findById({ _id: id }).populate("books").populate("comprador")
+    const { ID } = req.params
+    const order = await Order.findById(ID)
 
     if (!order) {
       const error = new Error('No se encontró la orden')
@@ -41,7 +32,7 @@ const detailOrder = async (req, res) => {
 
     res.json(order)
   } catch (error) {
-    console.log(error)
+    handleHttpError(res, 'ERROR_GET_ORDER_BY_ID', 500)
   }
 }
 
@@ -55,13 +46,13 @@ const deleteOrder = async (req, res) => {
     const order = await Order.findOneAndDelete({ _id: ID })
     res.json({ order })
   } catch (error) {
-    console.log(error)
+    handleHttpError(res, 'ERROR_DELETE_ORDER', 500)
   }
 }
 
 module.exports = {
   getOrders,
-  newOrder,
+  addOrder,
   detailOrder,
   updateOrder,
   deleteOrder
