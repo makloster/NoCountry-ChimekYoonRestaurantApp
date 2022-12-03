@@ -23,7 +23,7 @@ const orderSchema = mongoose.Schema(
     items: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Item'
+        ref: 'Items'
       }
     ],
     priceTotal: {

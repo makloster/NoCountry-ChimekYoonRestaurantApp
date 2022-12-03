@@ -12,7 +12,9 @@ const getOrders = async (req, res) => {
 
 const addOrder = async (req, res) => {
   try {
-    const newOrder = new Order(req.body)
+    const newOrder = new Order(
+      req.body
+    )
     const orderCreated = await newOrder.save()
     res.status(201).json(orderCreated)
   } catch (error) {
@@ -23,7 +25,7 @@ const addOrder = async (req, res) => {
 const detailOrder = async (req, res) => {
   try {
     const { ID } = req.params
-    const order = await Order.findById(ID)
+    const order = await Order.findById(ID).populate('Waiter').populate('Items')
 
     if (!order) {
       const error = new Error('No se encontró la orden')
