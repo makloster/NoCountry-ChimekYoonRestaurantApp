@@ -1,11 +1,17 @@
 import React from 'react';
 import Button from '../Button';
+import { useNavigation } from '@react-navigation/native';
+
 
 const BtnCancel = (props) => {
+
+  const navigation = useNavigation();
   const { onPress, text, styleBtn, styleTextBtn } = props;
   return (
     <Button
-      onPress={onPress}
+      onPress={() => {
+        navigation.navigate('MyTabs')
+      }}
       text={text}
       styleBtn={styleBtn}
       styleTextBtn={styleTextBtn}

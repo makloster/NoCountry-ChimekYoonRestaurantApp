@@ -97,17 +97,26 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     height: '15%',
+    position:'relative',
+    top:35,
+    
   },
   addBtn: {
     width: '50%',
     height: '50%',
     backgroundColor: '#EB7828',
+    display:'flex',
+    alignItems:'center',
+    justifyContent:'center',
+  
+     
   },
   textAddBtn: {
     textAlign: 'center',
-    paddingTop: '5%',
+    
     color: '#FFFFFF',
-    fontSize: 20,
+    fontSize: 18,
+    textTransform:'uppercase'
   },
   confirmBtn: {
     borderLeftColor: '#FFFFFF',
@@ -115,11 +124,14 @@ export const styles = StyleSheet.create({
     width: '50%',
     height: '50%',
     backgroundColor: '#EB7828',
+    display:'flex',
+    alignItems:'center',
+    justifyContent:'center',
   },
   textConfirmBtn: {
     textAlign: 'center',
-    paddingTop: '5%',
     color: '#FFFFFF',
-    fontSize: 20,
+    fontSize: 18,
+    textTransform:'uppercase'
   },
 });

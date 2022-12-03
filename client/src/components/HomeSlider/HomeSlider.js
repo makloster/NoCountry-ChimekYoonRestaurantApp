@@ -23,7 +23,7 @@ const HomeSlider = () => {
           styleBtn={styles.homeBtn}
           styleTextBtn={styles.textBtn}
           onPress={() => {
-            navigation.navigate('MyTabs');
+            navigation.navigate('Tables');
           }}
         />
       </View>
