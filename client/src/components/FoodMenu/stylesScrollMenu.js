@@ -81,5 +81,14 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: '15%',
   },
-  valueText: { color: '#EB7828', fontSize: 16 },
+  valueText: { 
+    color: '#EB7828', 
+    fontSize: 16 
+  },
+
+  removeIcon:{
+    position:'relative',
+    top:40,
+    right:30,
+  }
 });

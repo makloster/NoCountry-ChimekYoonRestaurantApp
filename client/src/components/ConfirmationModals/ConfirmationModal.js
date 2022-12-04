@@ -5,7 +5,7 @@ import { styles } from './stylesConfirmationModals';
 
 const ConfirmationModal = (props) => {
 
-    const [stateConfirmation, setStateConfirmation] = useState(false);
+    const [stateConfirmation, setStateConfirmation] = useState(true);
     const {
         confirmation,
         setConfirmation

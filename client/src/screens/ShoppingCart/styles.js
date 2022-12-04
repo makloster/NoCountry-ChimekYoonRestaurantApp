@@ -87,7 +87,7 @@ export const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 20,
     marginLeft: '5%',
-    marginRight: '20%',
+    marginRight: '15%',
   },
   totalValueOrder: {
     color: '#EB7828',

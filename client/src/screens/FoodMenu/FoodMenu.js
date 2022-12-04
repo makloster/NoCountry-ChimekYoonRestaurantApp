@@ -7,6 +7,8 @@ import {
   SafeAreaView,
   TouchableOpacity,
 } from 'react-native';
+import ButtonConfirmation from '../../components/FoodMenu/ButtonConfirmation/ButtonConfirmation';
+import MenuModal from '../../components/FoodMenu/MenuModal/MenuModal';
 import ScrollCategory from '../../components/FoodMenu/ScrollCategory';
 import ScrollMenu from '../../components/FoodMenu/ScrollMenu';
 import TableWidget from '../../components/tableWidget/tableWidget';
@@ -18,8 +20,15 @@ const FoodMenu = ({ navigation }) => {
   let hamburgerMenu = require('../../../assets/FoodMenu/HamburgerMenu.png');
   let chimekYoonIcon = require('../../../assets/FoodMenu/ChimekYoonIcon.png');
 
+  const [confirmation, setConfirmation] = useState(false);
+
+  const showModal = () =>{
+    setConfirmation(true)
+  }
+
   return (
     <SafeAreaView style={styles.menuContainer}>
+      <MenuModal confirmation={confirmation} setConfirmation={setConfirmation}/>
       <TouchableOpacity style={styles.hamburgerMenuContainer}>
         <Image source={hamburgerMenu} />
       </TouchableOpacity>
@@ -35,9 +44,12 @@ const FoodMenu = ({ navigation }) => {
         placeholder={textInputDefaultValue}
         placeholderTextColor={textInputPlaceHolderColor}
       />
+      <ButtonConfirmation showModal ={showModal}/>
+
       <View style={styles.subTitleContainer}>
         <Text style={styles.subTitle}>Categorías</Text>
       </View>
+      
       <ScrollCategory />
       <ScrollMenu active={false} />
     </SafeAreaView>

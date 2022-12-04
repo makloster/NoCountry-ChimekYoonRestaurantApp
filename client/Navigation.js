@@ -92,6 +92,7 @@ export default function Navigation() {
         <Stack.Screen name="MyTabs" component={MyTabs} />
         <Stack.Screen name="ItemDetail" component={ItemDetailContainer} />
         <Stack.Screen name="Tables" component={Tables} />
+        <Stack.Screen name="FoodMenu" component={FoodMenu} />
       </Stack.Navigator>
     </NavigationContainer>
   );

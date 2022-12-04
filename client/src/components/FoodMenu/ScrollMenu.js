@@ -88,6 +88,10 @@ const ScrollMenu = ({ onPressPlus, onPressMinus, valueQuantity, active }) => {
                 <Text style={styles.valueText}>{item.precio}</Text>
               </View>
               <Counter active={active} />
+              {active&&
+                <TouchableOpacity>
+                    <Image style={styles.removeIcon} source={require('../../../assets/Icons/removeIcon.png')}></Image>
+                </TouchableOpacity>}
             </View>
           </View>
         );

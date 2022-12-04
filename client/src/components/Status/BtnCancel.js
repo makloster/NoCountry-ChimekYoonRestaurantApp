@@ -10,7 +10,7 @@ const BtnCancel = (props) => {
   return (
     <Button
       onPress={() => {
-        navigation.navigate('MyTabs')
+        navigation.navigate("FoodMenu")
       }}
       text={text}
       styleBtn={styleBtn}
