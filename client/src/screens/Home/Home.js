@@ -1,7 +1,8 @@
-import { View, Image } from 'react-native';
+import { View, Image} from 'react-native';
 import React from 'react';
 import { styles } from './styles';
 import HomeSlider from '../../components/HomeSlider/HomeSlider';
+
 
 const Home = () => {
   return (

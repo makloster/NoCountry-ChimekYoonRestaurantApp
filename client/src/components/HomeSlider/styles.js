@@ -51,7 +51,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     paddingTop: 10,
     marginLeft: '25%',
-    marginTop: '20%',
+    marginTop: '10%',
   },
   textBtn: {
     color: '#FFFFFF',

@@ -87,19 +87,20 @@ export const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 20,
     marginLeft: '5%',
-    marginRight: '20%',
+    marginRight: '15%',
+    position: 'relative',
+    bottom: 10,
   },
   totalValueOrder: {
     color: '#EB7828',
     fontSize: 20,
+    position: 'relative',
+    bottom: 10,
   },
   footherBtns: {
     flexDirection: 'row',
     width: '100%',
     height: '15%',
-    position:'relative',
-    top:35,
-    
   },
   addBtn: {
     width: '50%',

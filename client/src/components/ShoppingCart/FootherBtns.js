@@ -1,6 +1,7 @@
 import { View, Text, TouchableOpacity } from 'react-native';
 import React from 'react';
 import ConfirmationModal from '../ConfirmationModals/ConfirmationModal';
+import { useNavigation } from '@react-navigation/native';
 
 const FootherBtns = (props) => {
   const {
@@ -17,11 +18,17 @@ const FootherBtns = (props) => {
     
   } = props;
 
+  const navigation=useNavigation();
   
   return (
     <View style={styleContainerFootherBtns}>
       <ConfirmationModal confirmation={confirmation} setConfirmation={setConfirmation}/>
-      <TouchableOpacity style={styleAddBtn}>
+      <TouchableOpacity 
+          style={styleAddBtn}
+          onPress={()=>{
+            navigation.navigate('FoodMenu')
+          }}
+        >
         <Text style={styleTextAddBtn}>{textAddBtn}</Text>
       </TouchableOpacity>
       <TouchableOpacity 

@@ -20,8 +20,8 @@ export const styles = StyleSheet.create({
   },
 
   subTitleContainer: {
-    marginTop: 30,
-    marginBottom: 10,
+    marginTop: 5,
+    marginBottom: 15,
     marginLeft: '5%',
   },
   subTitle: {
