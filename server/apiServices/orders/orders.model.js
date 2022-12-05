@@ -8,11 +8,8 @@ const orderSchema = mongoose.Schema(
       trim: true,
     },
     waiter: {
-      type: String,
-      enum: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Waiter'
-      }],
+      type: mongoose.Schema.Types.ObjectID,
+      ref: 'Waiter',
       required: true
     },
     turn: {
@@ -22,8 +19,11 @@ const orderSchema = mongoose.Schema(
     },
     items: [
       {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Items'
+        item: {
+          type: mongoose.Schema.Types.ObjectID,
+          ref: 'Item',
+          required: true
+        }
       }
     ],
     priceTotal: {
