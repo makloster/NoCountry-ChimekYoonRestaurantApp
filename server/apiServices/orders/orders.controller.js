@@ -18,7 +18,7 @@ const addOrder = async (req, res) => {
     const orderCreated = await newOrder.save()
     res.status(201).json(orderCreated)
   } catch (error) {
-    handleHttpError(res, 'ERROR_CREATE_ORDER', 500)
+    handleHttpError(res, error, 500)
   }
 }
 

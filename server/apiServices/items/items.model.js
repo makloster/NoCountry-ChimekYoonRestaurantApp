@@ -25,15 +25,8 @@ const itemsSchema = mongoose.Schema(
     inMenu: {
       type: Boolean,
       required: true,
-      default: false
-    },
-    items: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Item',
-        required: true
-      }
-    ]
+      default: true
+    }
   },
   {
     timestamps: true,
