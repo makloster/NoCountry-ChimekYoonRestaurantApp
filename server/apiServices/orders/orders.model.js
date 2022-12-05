@@ -4,7 +4,7 @@ const orderSchema = mongoose.Schema(
   {
     table: {
       type: Number,
-      require: true,
+      required: true,
       trim: true,
     },
     waiter: {
