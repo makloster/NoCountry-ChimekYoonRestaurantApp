@@ -1,48 +1,53 @@
-import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native';
-import { styles } from './stylesScrollMenu';
-import React from 'react';
-import Counter from '../Counter/Counter';
-import { useNavigation } from '@react-navigation/native';
+import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
+import { styles } from "./stylesScrollMenu";
+import React from "react";
+import Counter from "../Counter/Counter";
+import { useNavigation } from "@react-navigation/native";
+import { useGetTodosQuery } from "../../features/items/itemSlice";
 
 const ScrollMenu = ({ onPressPlus, onPressMinus, valueQuantity, active }) => {
   const navigation = useNavigation();
 
+  const { data } = useGetTodosQuery();
+
+  console.log(data, "esto es la datiña");
+
   const menu = [
     {
       id: 1,
-      name: 'Papacheddar',
-      precio: '$ 3.00',
-      thumbnail: require('../../../assets/Home/principal.png'),
+      name: "Papacheddar",
+      precio: "$ 3.00",
+      thumbnail: require("../../../assets/Home/principal.png"),
     },
     {
       id: 2,
-      name: '20 Alitas',
-      precio: '$ 13.50',
-      thumbnail: require('../../../assets/Home/principal.png'),
+      name: "20 Alitas",
+      precio: "$ 13.50",
+      thumbnail: require("../../../assets/Home/principal.png"),
     },
     {
       id: 3,
-      name: 'Chimek Burguer',
-      precio: '$ 4.85',
-      thumbnail: require('../../../assets/Home/principal.png'),
+      name: "Chimek Burguer",
+      precio: "$ 4.85",
+      thumbnail: require("../../../assets/Home/principal.png"),
     },
     {
       id: 4,
-      name: 'Dakanjeong',
-      precio: '$ 5.00',
-      thumbnail: require('../../../assets/Home/principal.png'),
+      name: "Dakanjeong",
+      precio: "$ 5.00",
+      thumbnail: require("../../../assets/Home/principal.png"),
     },
     {
       id: 5,
-      name: 'Banderilla Mixta',
-      precio: '$ 1.50',
-      thumbnail: require('../../../assets/Home/principal.png'),
+      name: "Banderilla Mixta",
+      precio: "$ 1.50",
+      thumbnail: require("../../../assets/Home/principal.png"),
     },
     {
       id: 6,
-      name: 'Pop Corn Mediano',
-      precio: '$ 4.25',
-      thumbnail: require('../../../assets/Home/principal.png'),
+      name: "Pop Corn Mediano",
+      precio: "$ 4.25",
+      thumbnail: require("../../../assets/Home/principal.png"),
     },
   ];
 
@@ -67,12 +72,12 @@ const ScrollMenu = ({ onPressPlus, onPressMinus, valueQuantity, active }) => {
               <TouchableOpacity
                 style={active ? styles.imageFrameHorizontal : styles.imageFrame}
                 onPress={() => {
-                  navigation.navigate('ItemDetail');
+                  navigation.navigate("ItemDetail");
                 }}
               >
                 <Image
                   style={active ? styles.imageHorizontal : styles.image}
-                  source={item.thumbnail}
+                  source={item.image}
                 />
               </TouchableOpacity>
               <View
@@ -85,13 +90,17 @@ const ScrollMenu = ({ onPressPlus, onPressMinus, valueQuantity, active }) => {
                 >
                   {item.name}
                 </Text>
-                <Text style={styles.valueText}>{item.precio}</Text>
+                <Text style={styles.valueText}>{item.price}</Text>
               </View>
               <Counter active={active} />
-              {active&&
+              {active && (
                 <TouchableOpacity>
-                    <Image style={styles.removeIcon} source={require('../../../assets/Icons/removeIcon.png')}></Image>
-                </TouchableOpacity>}
+                  <Image
+                    style={styles.removeIcon}
+                    source={require("../../../assets/Icons/removeIcon.png")}
+                  ></Image>
+                </TouchableOpacity>
+              )}
             </View>
           </View>
         );
