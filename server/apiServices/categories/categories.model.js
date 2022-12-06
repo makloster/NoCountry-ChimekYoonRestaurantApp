@@ -22,4 +22,4 @@ const categoriesSchema = mongoose.Schema(
 
 const categoryCreated = mongoose.model('Category', categoriesSchema)
 
-export default categoryCreated
+module.exports = {categoryCreated}
