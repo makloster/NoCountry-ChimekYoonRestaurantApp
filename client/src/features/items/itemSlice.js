@@ -2,12 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import axios from "axios";
 
-const API_URL = "http://localhost:4000/api/item";
+const API_URL = "https://s5-11-t-react-native.up.railway.app/api/item";
 
 export const todosApi = createApi({
   reducerPath: "todos",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:4000/api/item",
+    baseUrl: API_URL,
   }),
   endpoints: (builder) => ({
     getTodos: builder.query({
