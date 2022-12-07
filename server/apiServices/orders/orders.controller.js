@@ -1,9 +1,14 @@
 const { handleHttpError } = require('../../utils/handleError')
 const { Order } = require('./orders.model')
 
+const projection = { createdAt: 0, updatedAt: 0, __v: 0, avaliable: 0 }
+
 const getOrders = async (req, res) => {
   try {
-    const orderList = await Order.find()
+    const orderList = await Order
+      .find({}, projection)
+      .populate('waiter', projection)
+      .populate('items')
     res.json(orderList)
   } catch (error) {
     handleHttpError(res, 'ERROR_GET_ORDERS', 500)
@@ -24,8 +29,17 @@ const addOrder = async (req, res) => {
 
 const detailOrder = async (req, res) => {
   try {
-    const { ID } = req.params
-    const order = await Order.findById(ID).populate('Waiter').populate('Items')
+    const { id } = req.params
+    const order = await Order
+      .findById(id, projection)
+      .populate('waiter', projection)
+      .populate('items')
+      .populate({
+        path: 'items',
+        populate: {
+          path: 'item'
+        }
+      })
 
     if (!order) {
       const error = new Error('No se encontró la orden')
@@ -45,7 +59,8 @@ const updateOrder = async (req, res) => {
 const deleteOrder = async (req, res) => {
   try {
     const ID = req.params.id
-    const order = await Order.findOneAndDelete({ _id: ID })
+    const order = await Order
+      .findOneAndDelete({ _id: ID })
     res.json({ order })
   } catch (error) {
     handleHttpError(res, 'ERROR_DELETE_ORDER', 500)
