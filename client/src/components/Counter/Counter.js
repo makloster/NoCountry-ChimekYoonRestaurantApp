@@ -1,13 +1,16 @@
-import { React, useState } from 'react';
-import { View, TouchableOpacity, Text } from 'react-native';
-import { styles } from './stylesCounter';
-const Counter = ({ active }) => {
+import { React, useState } from "react";
+import { View, TouchableOpacity, Text } from "react-native";
+import { styles } from "./stylesCounter";
+
+const Counter = ({ active, items, setItems, item }) => {
   const [valueQuantity, setValueQuantity] = useState(0);
-  let plus = '+';
-  let minus = '-';
+
+  let plus = "+";
+  let minus = "-";
 
   const onPressPlus = () => {
     setValueQuantity(valueQuantity + 1);
+    setItems([...items, item]);
   };
 
   const onPressMinus = () => {
@@ -53,6 +56,7 @@ const Counter = ({ active }) => {
           {active ? plus : minus}
         </Text>
       </TouchableOpacity>
+      <Text></Text>
     </View>
   );
 };

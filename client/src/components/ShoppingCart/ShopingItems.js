@@ -1,21 +1,55 @@
 import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
-import { styles } from "./stylesScrollMenu";
-import React, { useState } from "react";
+import { styles } from "../FoodMenu/stylesScrollMenu";
+import React from "react";
 import Counter from "../Counter/Counter";
-import { useNavigation } from "@react-navigation/native";
-import { useGetTodosQuery } from "../../features/items/itemSlice";
 
-const ScrollMenu = ({ active }) => {
-  const navigation = useNavigation();
-  const { data } = useGetTodosQuery();
-  const [items, setItems] = useState([]);
+const ShopingItems = ({active}) => {
+  const menu = [
+    {
+      id: 1,
+      name: "Papacheddar",
+      precio: "$ 3.00",
+      thumbnail: require("../../../assets/Home/principal.png"),
+    },
+    {
+      id: 2,
+      name: "20 Alitas",
+      precio: "$ 13.50",
+      thumbnail: require("../../../assets/Home/principal.png"),
+    },
+    {
+      id: 3,
+      name: "Chimek Burguer",
+      precio: "$ 4.85",
+      thumbnail: require("../../../assets/Home/principal.png"),
+    },
+    {
+      id: 4,
+      name: "Dakanjeong",
+      precio: "$ 5.00",
+      thumbnail: require("../../../assets/Home/principal.png"),
+    },
+    {
+      id: 5,
+      name: "Banderilla Mixta",
+      precio: "$ 1.50",
+      thumbnail: require("../../../assets/Home/principal.png"),
+    },
+    {
+      id: 6,
+      name: "Pop Corn Mediano",
+      precio: "$ 4.25",
+      thumbnail: require("../../../assets/Home/principal.png"),
+    },
+  ];
 
   return (
     <FlatList
-      data={data}
+      data={menu}
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{ paddinTop: 50 }}
       scrollEventThrottle={16}
+      keyExtractor={(item) => item.id}
       renderItem={({ item }) => {
         return (
           <View
@@ -29,9 +63,6 @@ const ScrollMenu = ({ active }) => {
             >
               <TouchableOpacity
                 style={active ? styles.imageFrameHorizontal : styles.imageFrame}
-                onPress={() => {
-                  navigation.navigate("ItemDetail");
-                }}
               >
                 <Image
                   style={active ? styles.imageHorizontal : styles.image}
@@ -50,12 +81,7 @@ const ScrollMenu = ({ active }) => {
                 </Text>
                 <Text style={styles.valueText}>{item.price}</Text>
               </View>
-              <Counter
-                active={active}
-                item={item}
-                setItems={setItems}
-                items={items}
-              />
+              <Counter active={active} />
               {active && (
                 <TouchableOpacity>
                   <Image
@@ -72,4 +98,4 @@ const ScrollMenu = ({ active }) => {
   );
 };
 
-export default ScrollMenu;
+export default ShopingItems;
