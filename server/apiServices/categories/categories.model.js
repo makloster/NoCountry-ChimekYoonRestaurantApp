@@ -9,9 +9,11 @@ const categoriesSchema = mongoose.Schema(
     },
     items: [
       {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Item',
-        required: true
+        item: {
+          type: mongoose.Schema.Types.ObjectID,
+          ref: 'Item',
+          required: true
+        }
       }
     ]
   },
