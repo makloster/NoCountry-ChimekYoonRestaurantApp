@@ -104,6 +104,6 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginLeft: '10%',
-    marginTop: 10,
+    marginTop: 35,
   },
 });
