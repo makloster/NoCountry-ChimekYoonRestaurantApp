@@ -5,6 +5,14 @@ import { styles } from './stylesScrollCategory';
 const ScrollCategory = ({data,filterInfo }) => {
   
 
+
+  
+
+  const indiceReturn = (id) => {
+    const indice = data.findIndex(i => i._id === id)
+    return indice
+  }
+
   return (
     <View style={styles.container}>
       <FlatList
@@ -27,9 +35,11 @@ const ScrollCategory = ({data,filterInfo }) => {
 
               
             >
+
+              
               <View style={styles.category}>
                 <View style={styles.imageFrame}>
-                  <Image style={styles.image} source={{uri:item.image}} />
+                  <Image style={styles.image} source={{uri:data[indiceReturn(item._id)].items[0].item.image}} />
                 </View>
                 <View>
                   <Text style={styles.name}>{item.name}</Text>
