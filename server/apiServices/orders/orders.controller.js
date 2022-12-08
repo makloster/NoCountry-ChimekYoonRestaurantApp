@@ -9,6 +9,13 @@ const getOrders = async (req, res) => {
       .find({}, projection)
       .populate('waiter', projection)
       .populate('items')
+      .populate({
+        path: 'items',
+        populate: {
+          path: 'item',
+          select: projection
+        }
+      })
     res.json(orderList)
   } catch (error) {
     handleHttpError(res, 'ERROR_GET_ORDERS', 500)
@@ -37,7 +44,8 @@ const detailOrder = async (req, res) => {
       .populate({
         path: 'items',
         populate: {
-          path: 'item'
+          path: 'item',
+          select: projection
         }
       })
 
