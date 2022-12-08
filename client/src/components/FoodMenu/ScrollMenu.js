@@ -35,14 +35,12 @@ const ScrollMenu = () => {
                 <Text style={styles.valueText}>{item.price}</Text>
               </View>
               <Counter item={item} setItems={setItems} items={items} />
-              {active && (
-                <TouchableOpacity>
-                  <Image
-                    style={styles.removeIcon}
-                    source={require('../../../assets/Icons/removeIcon.png')}
-                  ></Image>
-                </TouchableOpacity>
-              )}
+              {/* <TouchableOpacity>
+                <Image
+                  style={styles.removeIcon}
+                  source={require('../../../assets/Icons/removeIcon.png')}
+                ></Image>
+              </TouchableOpacity> */}
             </View>
           </View>
         );
