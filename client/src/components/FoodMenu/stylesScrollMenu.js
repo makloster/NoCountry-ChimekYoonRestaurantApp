@@ -13,17 +13,6 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  containerHorizontal: {
-    borderBottomColor: '#FFFFFF',
-    borderBottomWidth: 0.7,
-    height: 150,
-    width: '100%',
-  },
-  containerDishHorizontal: {
-    height: 130,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
   imageFrameHorizontal: {
     borderRadius: 50,
     width: 100,
@@ -52,43 +41,28 @@ export const styles = StyleSheet.create({
     height: 100,
     marginRight: '5%',
   },
-  imageHorizontal: {
-    borderRadius: 50,
-    width: '100%',
-    height: '100%',
-    marginLeft: '10%',
-  },
   image: {
     borderRadius: 50,
     width: '100%',
     height: '100%',
   },
-  containerTextHorizontal: {
-    flexDirection: 'column',
-    width: 100,
-  },
   containerText: {
     flexDirection: 'column',
     width: 100,
-  },
-  nameTextHorizontal: {
-    color: '#FFFFFF',
-    fontSize: 16,
-    marginBottom: '15%',
   },
   nameText: {
     color: '#FFFFFF',
     fontSize: 16,
     marginBottom: '15%',
   },
-  valueText: { 
-    color: '#EB7828', 
-    fontSize: 16 
+  valueText: {
+    color: '#EB7828',
+    fontSize: 16,
   },
 
-  removeIcon:{
-    position:'relative',
-    top:40,
-    right:30,
-  }
+  removeIcon: {
+    position: 'relative',
+    top: 40,
+    right: 30,
+  },
 });
