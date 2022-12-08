@@ -7,18 +7,18 @@ const ConfirmationModal = (props) => {
 
     const [stateConfirmation, setStateConfirmation] = useState(true);
     const {
-        confirmation,
-        setConfirmation
+        confirmationOrder,
+        setConfirmationOrder
       } = props;
 
     const hiddenModal = () =>{
-        setConfirmation(false)
+        setConfirmationOrder(false)
        
     }
 
     return (
        <Modal
-        visible={confirmation ? true: false}
+        visible={confirmationOrder ? true: false}
         transparent
         
        >
