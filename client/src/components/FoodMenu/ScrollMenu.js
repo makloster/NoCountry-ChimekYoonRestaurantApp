@@ -11,6 +11,7 @@ const ScrollMenu = ({ active }) => {
   const [items, setItems] = useState([]);
 
   
+
   return (
     <FlatList
       data={data}
@@ -31,7 +32,9 @@ const ScrollMenu = ({ active }) => {
               <TouchableOpacity
                 style={active ? styles.imageFrameHorizontal : styles.imageFrame}
                 onPress={() => {
-                  navigation.navigate("ItemDetail");
+                  navigation.navigate("ItemDetail",{
+                    item:item
+                  });
                 }}
               >
                 <Image

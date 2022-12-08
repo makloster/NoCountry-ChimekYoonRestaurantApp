@@ -89,4 +89,10 @@ export const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 25,
   },
+  botonContainer:{
+    flexDirection:'row'
+  },
+  text:{
+    color:'#FFFFFF'
+  }
 });

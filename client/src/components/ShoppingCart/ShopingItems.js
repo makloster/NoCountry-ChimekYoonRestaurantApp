@@ -2,50 +2,16 @@ import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
 import { styles } from "../FoodMenu/stylesScrollMenu";
 import React from "react";
 import Counter from "../Counter/Counter";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 const ShopingItems = ({active}) => {
-  const menu = [
-    {
-      id: 1,
-      name: "Papacheddar",
-      price: "$ 3.00",
-      image: require("../../../assets/Home/principal.png"),
-    },
-    {
-      id: 2,
-      name: "20 Alitas",
-      price: "$ 13.50",
-      image: require("../../../assets/Home/principal.png"),
-    },
-    {
-      id: 3,
-      name: "Chimek Burguer",
-      price: "$ 4.85",
-      image: require("../../../assets/Home/principal.png"),
-    },
-    {
-      id: 4,
-      name: "Dakanjeong",
-      price: "$ 5.00",
-      image: require("../../../assets/Home/principal.png"),
-    },
-    {
-      id: 5,
-      name: "Banderilla Mixta",
-      price: "$ 1.50",
-      image: require("../../../assets/Home/principal.png"),
-    },
-    {
-      id: 6,
-      name: "Pop Corn Mediano",
-      price: "$ 4.25",
-      image: require("../../../assets/Home/principal.png"),
-    },
-  ];
+
+  const {carrito} = useContext(CartContext);
 
   return (
     <FlatList
-      data={menu}
+      data={carrito}
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{ paddinTop: 50 }}
       scrollEventThrottle={16}
