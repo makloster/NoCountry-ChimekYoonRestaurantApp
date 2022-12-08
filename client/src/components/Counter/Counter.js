@@ -1,6 +1,6 @@
 import { React, useState } from "react";
-import { View, TouchableOpacity, Text } from "react-native";
-import ShopingItems from "../ShoppingCart/ShopingItems";
+import { View, TouchableOpacity, Text, Alert } from "react-native";
+import { useDispatch } from "react-redux";
 import { styles } from "./stylesCounter";
 
 const Counter = ({ active, items, setItems, item, setProd }) => {
@@ -13,10 +13,7 @@ const Counter = ({ active, items, setItems, item, setProd }) => {
     setValueQuantity(valueQuantity + 1);
     setItems([...items, item]);
     setProd(items);
-    /* items.push(item); */
   };
-
-  /*   console.log(items, "items en Counter") */
 
   const onPressMinus = () => {
     if (valueQuantity <= 0) {

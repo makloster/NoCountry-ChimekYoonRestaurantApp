@@ -6,6 +6,7 @@ import {
   Image,
   SafeAreaView,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 import { useDispatch } from "react-redux";
 import ButtonConfirmation from "../../components/FoodMenu/ButtonConfirmation/ButtonConfirmation";
@@ -33,11 +34,19 @@ const FoodMenu = ({ navigation, items }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addItem(prod));
+    prod
+      ? dispatch(addItem(prod)) &&
+        Alert.alert("Tus productos fueron agregados al carrito!", "", [
+          { text: "Aceptar", onPress: () => setConfirmation(false) },
+        ])
+      : Alert.alert("Ey!", "Debes seleccionar al menos 1 producto", [
+          {
+            text: "Aceptar",
+            onPress: () => setConfirmation(false),
+          },
+        ]);
   };
-
-  console.log(prod, "prod de FoodMenu");
-
+  //navigation.navigate("ShoppingCart")
   return (
     <SafeAreaView style={styles.menuContainer}>
       <MenuModal
