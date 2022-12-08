@@ -1,7 +1,6 @@
 const { handleHttpError } = require('../../utils/handleError')
 const { Order } = require('./orders.model')
-
-const projection = { createdAt: 0, updatedAt: 0, __v: 0, avaliable: 0 }
+const { projection } = require('../../utils/utils')
 
 const getOrders = async (req, res) => {
   try {
@@ -9,6 +8,13 @@ const getOrders = async (req, res) => {
       .find({}, projection)
       .populate('waiter', projection)
       .populate('items')
+      .populate({
+        path: 'items',
+        populate: {
+          path: 'item',
+          select: projection
+        }
+      })
     res.json(orderList)
   } catch (error) {
     handleHttpError(res, 'ERROR_GET_ORDERS', 500)
@@ -37,7 +43,8 @@ const detailOrder = async (req, res) => {
       .populate({
         path: 'items',
         populate: {
-          path: 'item'
+          path: 'item',
+          select: projection
         }
       })
 
