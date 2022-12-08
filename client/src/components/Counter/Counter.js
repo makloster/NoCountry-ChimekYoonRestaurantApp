@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import { View, TouchableOpacity, Text } from "react-native";
+import ShopingItems from "../ShoppingCart/ShopingItems";
 import { styles } from "./stylesCounter";
 
 const Counter = ({ active, items, setItems, item }) => {
@@ -10,15 +11,19 @@ const Counter = ({ active, items, setItems, item }) => {
 
   const onPressPlus = () => {
     setValueQuantity(valueQuantity + 1);
-    setItems([...items, item]);
+    items.push(item);
+    console.log(items)
   };
 
   const onPressMinus = () => {
     if (valueQuantity <= 0) {
     } else if (valueQuantity > 0) {
       setValueQuantity(valueQuantity - 1);
-    } else {
-    }
+      const indice=items.findIndex(i => i.id === item.id)
+      items.splice(indice, 1)
+      console.log(items)
+      
+    } 
   };
 
   return (
