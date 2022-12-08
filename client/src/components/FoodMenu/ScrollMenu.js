@@ -32,7 +32,7 @@ const ScrollMenu = () => {
               </TouchableOpacity>
               <View style={styles.containerText}>
                 <Text style={styles.nameText}>{item.name}</Text>
-                <Text style={styles.valueText}>{item.price}</Text>
+                <Text style={styles.valueText}>$ {item.price}</Text>
               </View>
               <Counter item={item} setItems={setItems} items={items} />
               {/* <TouchableOpacity>

@@ -46,7 +46,7 @@ const ShopingItems = ({active}) => {
                 >
                   {item.name}
                 </Text>
-                <Text style={styles.valueText}>{item.price}</Text>
+                <Text style={styles.valueText}>$ {item.price}</Text>
               </View>
               <CartCounter item={item}/>
               
