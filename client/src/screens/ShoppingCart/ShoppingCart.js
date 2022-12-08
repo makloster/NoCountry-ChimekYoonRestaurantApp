@@ -44,7 +44,7 @@ const ShoppingCart = () => {
           <Image style={styles.logo} source={chimekYoonIcon} />
         </View>
         {/* <ScrollMenu active={true} /> */}
-        <ShopingItems active={true} />
+        <ShopingItems/>
       </>
 
       <View style={styles.containerFootherShoppingCart}>
