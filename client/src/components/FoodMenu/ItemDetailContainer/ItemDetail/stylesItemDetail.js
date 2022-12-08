@@ -73,14 +73,17 @@ export const styles = StyleSheet.create({
         color:'#FFFFFF',
         fontSize:30,
         fontWeight:'500',
-        paddingLeft:'4%'
+        paddingLeft:'4%',
+        width:'65%'
     },
 
     price:{
         color:'#EB7828',
         fontSize:30,
         fontWeight:'500',
-        paddingRight:'4%'
+        paddingRight:'2%',
+        width:'30%'
+
     },
 
     containerDescription:{

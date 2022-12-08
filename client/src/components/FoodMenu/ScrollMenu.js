@@ -28,7 +28,7 @@ const ScrollMenu = () => {
                   });
                 }}
               >
-                <Image style={styles.image} source={item.image} />
+                <Image style={styles.image} source={{uri:item.image}} />
               </TouchableOpacity>
               <View style={styles.containerText}>
                 <Text style={styles.nameText}>{item.name}</Text>

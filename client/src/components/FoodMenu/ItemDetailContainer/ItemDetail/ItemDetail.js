@@ -10,7 +10,7 @@ const ItemDetail = ({item, valueQuantity, setValueQuantity}) => {
         <View style={styles.containerItem}>
     
           <View style={styles.imageFrame}>
-            <Image style={styles.image} source={require('../../../../../assets/Home/principal.png')} />
+            <Image style={styles.image} source={{uri:item.image}} />
           </View>
           <View style={styles.ratingContainer}>
             <Image style={styles.starIcon} source={require('../../../../../assets/Icons/StarRating.png')} />
@@ -23,7 +23,7 @@ const ItemDetail = ({item, valueQuantity, setValueQuantity}) => {
           </View>
           <View style={styles.containerDescription}>
               <Text style={styles.description}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis justo in arcu lacinia scelerisque tristique fringilla arcu. Aenean viverra torto ue tristique fringilla arcu. 
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis justo in arcu lacinia scelerisque tristique fringilla arcu. Aenean viverra torto ue tristique fringilla arcu. 
               </Text>
           </View>
           
