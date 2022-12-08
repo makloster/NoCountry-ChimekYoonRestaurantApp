@@ -31,7 +31,7 @@ const ScrollCategory = ({data,filterInfo }) => {
                   : styles.categoryContainerOrange
               }
 
-              onPress={() => filterInfo(item.id)}
+              onPress={() => filterInfo(item._id)}
 
               
             >
