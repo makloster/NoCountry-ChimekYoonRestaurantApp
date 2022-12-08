@@ -5,7 +5,7 @@ import Counter from "../Counter/Counter";
 import { useNavigation } from "@react-navigation/native";
 import { useGetTodosQuery } from "../../features/items/itemSlice";
 
-const ScrollMenu = ({ active }) => {
+const ScrollMenu = ({ active, setProd }) => {
   const navigation = useNavigation();
   const { data } = useGetTodosQuery();
   const [items, setItems] = useState([]);
@@ -56,6 +56,7 @@ const ScrollMenu = ({ active }) => {
                 item={item}
                 setItems={setItems}
                 items={items}
+                setProd={setProd}
               />
               {active && (
                 <TouchableOpacity>
