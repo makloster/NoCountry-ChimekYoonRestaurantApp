@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   containerQuantity: {
     flexDirection: 'column',
-    marginLeft: '25%',
+    marginLeft: '15%',
   },
   containerQuantityHorizontal: {
     flexDirection: 'row',
@@ -89,8 +89,22 @@ export const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 25,
   },
-  botonContainer:{
-    flexDirection:'row'
+  botonContainer: {
+    flexDirection: 'row',
+  },
+  text: {
+    color: '#FFFFFF',
+  },
+  containerButtonConfirmation: {
+    backgroundColor: '#008f39',
+    borderRadius: 20,
+    width: 60,
+    height: 45,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: '10%',
+    marginTop: 35,
   },
   text:{
     color:'#FFFFFF'
