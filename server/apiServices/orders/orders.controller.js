@@ -11,7 +11,8 @@ const getOrders = async (req, res) => {
       .populate({
         path: 'items',
         populate: {
-          path: 'item'
+          path: 'item',
+          select: projection
         }
       })
     res.json(orderList)
@@ -42,7 +43,8 @@ const detailOrder = async (req, res) => {
       .populate({
         path: 'items',
         populate: {
-          path: 'item'
+          path: 'item',
+          select: projection
         }
       })
 
