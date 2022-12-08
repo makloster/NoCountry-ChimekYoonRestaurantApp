@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import CartCounter from "../Counter/CartCounter";
 
-const ShopingItems = ({active}) => {
+const ShopingItems = () => {
 
   const {carrito} = useContext(CartContext);
 
@@ -21,28 +21,22 @@ const ShopingItems = ({active}) => {
         return (
           <View
             key={item.id}
-            style={active ? styles.containerHorizontal : styles.container}
+            style={styles.container}
           >
             <View
-              style={
-                active ? styles.containerDishHorizontal : styles.containerDish
-              }
-            >
+              style={styles.containerDish}>
               <TouchableOpacity
-                style={active ? styles.imageFrameHorizontal : styles.imageFrame}
+                style={styles.imageFrame}
               >
                 <Image
-                  style={active ? styles.imageHorizontal : styles.image}
+                  style={styles.image}
                   source={item.image}
                 />
               </TouchableOpacity>
               <View
-                style={
-                  active ? styles.containerTextHorizontal : styles.containerText
-                }
-              >
+                style={styles.containerText}>
                 <Text
-                  style={active ? styles.nameTextHorizontal : styles.nameText}
+                  style={styles.nameText}
                 >
                   {item.name}
                 </Text>
