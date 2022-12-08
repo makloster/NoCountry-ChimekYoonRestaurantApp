@@ -1,16 +1,17 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
     borderBottomColor: '#FFFFFF',
     borderBottomWidth: 0.7,
     height: 150,
+    width: Dimensions.get('window').width,
   
   },
   containerDish: {
     paddingLeft: '5%',
     width: '100%',
-    height: 130,
+    height: 150,
     flexDirection: 'row',
     alignItems: 'center',
   },
