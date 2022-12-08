@@ -3,11 +3,10 @@ import { styles } from './stylesScrollMenu';
 import React, { useState } from 'react';
 import Counter from '../Counter/Counter';
 import { useNavigation } from '@react-navigation/native';
-import { useGetTodosQuery } from '../../features/items/itemSlice';
 
-const ScrollMenu = () => {
+const ScrollMenu = ({data}) => {
   const navigation = useNavigation();
-  const { data } = useGetTodosQuery();
+  
   const [items, setItems] = useState([]);
 
   return (
