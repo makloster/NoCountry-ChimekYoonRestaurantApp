@@ -94,5 +94,11 @@ export const styles = StyleSheet.create({
   },
   text:{
     color:'#FFFFFF'
+  },
+
+  removeIcon:{
+    position:'relative',
+    top:8,
+    left:92,
   }
 });
