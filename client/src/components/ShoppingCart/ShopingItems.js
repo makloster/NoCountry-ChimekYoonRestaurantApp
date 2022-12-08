@@ -2,9 +2,10 @@ import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
 import { styles } from "../FoodMenu/stylesScrollMenu";
 import React from "react";
 import Counter from "../Counter/Counter";
+import { useSelector } from "react-redux";
 
-const ShopingItems = ({active}) => {
-  const menu = [
+const ShopingItems = ({ active }) => {
+  /*   const menu = [
     {
       id: 1,
       name: "Papacheddar",
@@ -41,19 +42,21 @@ const ShopingItems = ({active}) => {
       price: "$ 4.25",
       image: require("../../../assets/Home/principal.png"),
     },
-  ];
+  ]; */
+  const cart = useSelector((state) => state.cart);
+/*   console.log(cart, "data redux") */
 
   return (
     <FlatList
-      data={menu}
+      data={cart}
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{ paddinTop: 50 }}
       scrollEventThrottle={16}
-      keyExtractor={(item) => item.id}
+      /* keyExtractor={(item) => item.id} */
       renderItem={({ item }) => {
         return (
           <View
-            key={item.id}
+            key={item._id}
             style={active ? styles.containerHorizontal : styles.container}
           >
             <View
