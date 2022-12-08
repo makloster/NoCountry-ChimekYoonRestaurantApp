@@ -7,7 +7,7 @@ const categoriesSchema = mongoose.Schema(
       trim: true,
       required: true,
     },
-    items: [
+    item: [
       {
         item: {
           type: mongoose.Schema.Types.ObjectID,
