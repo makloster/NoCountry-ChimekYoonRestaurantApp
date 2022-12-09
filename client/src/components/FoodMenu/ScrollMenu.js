@@ -1,16 +1,18 @@
-import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
-import { styles } from "./stylesScrollMenu";
-import React, { useState } from "react";
-import Counter from "../Counter/Counter";
-import { useNavigation } from "@react-navigation/native";
-import { useGetTodosQuery } from "../../features/items/itemSlice";
+import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native';
+import { styles } from './stylesScrollMenu';
+import React, { useState } from 'react';
+import Counter from '../Counter/Counter';
+import { useNavigation } from '@react-navigation/native';
+import { useGetTodosQuery } from '../../features/items/itemSlice';
 
+<<<<<<< HEAD
 const ScrollMenu = ({ active, setProd }) => {
+=======
+const ScrollMenu = () => {
+>>>>>>> fe119aa (Estilo y quitar el active)
   const navigation = useNavigation();
   const { data } = useGetTodosQuery();
   const [items, setItems] = useState([]);
-
-  
 
   return (
     <FlatList
@@ -20,40 +22,23 @@ const ScrollMenu = ({ active, setProd }) => {
       scrollEventThrottle={16}
       renderItem={({ item }) => {
         return (
-          <View
-            key={item.id}
-            style={active ? styles.containerHorizontal : styles.container}
-          >
-            <View
-              style={
-                active ? styles.containerDishHorizontal : styles.containerDish
-              }
-            >
+          <View key={item.id} style={styles.container}>
+            <View style={styles.containerDish}>
               <TouchableOpacity
-                style={active ? styles.imageFrameHorizontal : styles.imageFrame}
+                style={styles.imageFrame}
                 onPress={() => {
-                  navigation.navigate("ItemDetail",{
-                    item:item
+                  navigation.navigate('ItemDetail', {
+                    item: item,
                   });
                 }}
               >
-                <Image
-                  style={active ? styles.imageHorizontal : styles.image}
-                  source={item.image}
-                />
+                <Image style={styles.image} source={item.image} />
               </TouchableOpacity>
-              <View
-                style={
-                  active ? styles.containerTextHorizontal : styles.containerText
-                }
-              >
-                <Text
-                  style={active ? styles.nameTextHorizontal : styles.nameText}
-                >
-                  {item.name}
-                </Text>
+              <View style={styles.containerText}>
+                <Text style={styles.nameText}>{item.name}</Text>
                 <Text style={styles.valueText}>{item.price}</Text>
               </View>
+<<<<<<< HEAD
               <Counter
                 active={active}
                 item={item}
@@ -61,11 +46,14 @@ const ScrollMenu = ({ active, setProd }) => {
                 items={items}
                 setProd={setProd}
               />
+=======
+              <Counter item={item} setItems={setItems} items={items} />
+>>>>>>> fe119aa (Estilo y quitar el active)
               {active && (
                 <TouchableOpacity>
                   <Image
                     style={styles.removeIcon}
-                    source={require("../../../assets/Icons/removeIcon.png")}
+                    source={require('../../../assets/Icons/removeIcon.png')}
                   ></Image>
                 </TouchableOpacity>
               )}

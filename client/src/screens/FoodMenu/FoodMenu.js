@@ -23,7 +23,6 @@ const FoodMenu = ({ navigation, items }) => {
   let hamburgerMenu = require("../../../assets/FoodMenu/HamburgerMenu.png");
   let chimekYoonIcon = require("../../../assets/FoodMenu/ChimekYoonIcon.png");
 
- 
   const [confirmation, setConfirmation] = useState(false);
   const [prod, setProd] = useState();
   const dispatch = useDispatch();
@@ -52,7 +51,6 @@ const FoodMenu = ({ navigation, items }) => {
       <MenuModal
         confirmation={confirmation}
         setConfirmation={setConfirmation}
-        onPress={handleSubmit}
       />
       <TouchableOpacity style={styles.hamburgerMenuContainer}>
         <Image source={hamburgerMenu} />
@@ -69,14 +67,13 @@ const FoodMenu = ({ navigation, items }) => {
         placeholder={textInputDefaultValue}
         placeholderTextColor={textInputPlaceHolderColor}
       />
-      <ButtonConfirmation showModal={showModal} />
+      {/*  <ButtonConfirmation showModal ={showModal}/> */}
 
       <View style={styles.subTitleContainer}>
         <Text style={styles.subTitle}>Categorías</Text>
       </View>
-
       <ScrollCategory />
-      <ScrollMenu active={false} setProd={setProd} />
+      <ScrollMenu />
     </SafeAreaView>
   );
 };
