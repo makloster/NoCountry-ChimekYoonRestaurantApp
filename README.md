@@ -27,7 +27,10 @@ Además de las funcionalidades estándar de un aplicativo tal, nuestro cliente n
 
 *   **ReactJs** &nbsp; <a href="https://reactjs.org/" rel="nofollow"> <img src="https://cdn.icon-icons.com/icons2/2415/PNG/96/react_original_wordmark_logo_icon_146375.png" alt="reactjs" width="30" height="30" style="max-width: 100%;"> </a>
 
+- React-Native plugin for the bluetooth ESC/POS & TSC printers.
+
 -   **CSS3** &nbsp; <a href="https://www.w3schools.com/css/" rel="nofollow"> <img src="https://cdn.icon-icons.com/icons2/2107/PNG/96/file_type_css_icon_130661.png" alt="css3" width="30" height="30" style="max-width: 100%;"> </a>
+
 
 ### **BackEnd**
 
