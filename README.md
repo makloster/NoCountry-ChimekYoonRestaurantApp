@@ -64,5 +64,6 @@ Además de las funcionalidades estándar de un aplicativo tal, nuestro cliente n
 -   [Apple App Store](https://apps.apple.com/es/app/expo-go/id982107779)
 
 2. Scanneá el QR 👇 , con el scanner que se encuentra al ejecutar Expo Go .
-   <br>
+
+<br>
    <img src="https://cdn.discordapp.com/attachments/1038477510628880488/1050641250862243911/chimek.png" alt="expo" width="200" height="200" >
