@@ -1,18 +1,29 @@
 import {React} from 'react';
 import { Modal, Text, TouchableOpacity, View, Image } from 'react-native';
-import { styles } from './stylesMenuModal';
-const MenuModal = (props) => {
+import ConfirmationModal from '../../ConfirmationModals/ConfirmationModal';
+import { styles } from './stylesPreConfirmationModal';
+const PreConfirmationModal = (props) => {
     const {
         confirmation,
-        setConfirmation
+        setConfirmation,
+        onPressSuccess,
+        confirmationOrder,
+        setConfirmationOrder
     } = props;
 
-    const hiddenModal = () =>{
+  const hiddenModal = () => {
+    setConfirmation(false);
+  };
+
+    const confirmationOrderFinal = () => {
+        onPressSuccess()
         setConfirmation(false)
-       
     }
 
+ 
     return (
+        <>
+     <ConfirmationModal confirmationOrder={confirmationOrder} setConfirmationOrder={setConfirmationOrder}/>
      <Modal
         visible={confirmation ? true : false}
         transparent
@@ -31,7 +42,7 @@ const MenuModal = (props) => {
                 </TouchableOpacity>
                 <TouchableOpacity 
                     style={[styles.button, {backgroundColor:'#EB7828'}]}
-                   
+                    onPress={confirmationOrderFinal}
                     >
                     <Text style={styles.textButton}>Si</Text>
                 </TouchableOpacity>
@@ -40,7 +51,8 @@ const MenuModal = (props) => {
             </View>
         </View>
      </Modal>
+     </>
     );
 }
 
-export default MenuModal;
+export default PreConfirmationModal;

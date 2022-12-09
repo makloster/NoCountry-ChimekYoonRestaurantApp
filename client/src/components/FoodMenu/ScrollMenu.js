@@ -1,17 +1,13 @@
-import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
-import { styles } from "./stylesScrollMenu";
-import React, { useState } from "react";
-import Counter from "../Counter/Counter";
-import { useNavigation } from "@react-navigation/native";
-import { useGetTodosQuery } from "../../features/items/itemSlice";
+import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native';
+import { styles } from './stylesScrollMenu';
+import React, { useState } from 'react';
+import Counter from '../Counter/Counter';
+import { useNavigation } from '@react-navigation/native';
 
-const ScrollMenu = ({ active }) => {
+const ScrollMenu = ({ data, activeCategory }) => {
   const navigation = useNavigation();
-  const { data } = useGetTodosQuery();
+
   const [items, setItems] = useState([]);
-
-  
-
   return (
     <FlatList
       data={data}
@@ -20,54 +16,23 @@ const ScrollMenu = ({ active }) => {
       scrollEventThrottle={16}
       renderItem={({ item }) => {
         return (
-          <View
-            key={item.id}
-            style={active ? styles.containerHorizontal : styles.container}
-          >
-            <View
-              style={
-                active ? styles.containerDishHorizontal : styles.containerDish
-              }
-            >
+          <View key={item.id} style={styles.container}>
+            <View style={styles.containerDish}>
               <TouchableOpacity
-                style={active ? styles.imageFrameHorizontal : styles.imageFrame}
+                style={styles.imageFrame}
                 onPress={() => {
-                  navigation.navigate("ItemDetail",{
-                    item:item
-                  });
+                  navigation.navigate('ItemDetail', 
+                    !activeCategory?{item:item}:{item:item.item},
+                  );
                 }}
               >
-                <Image
-                  style={active ? styles.imageHorizontal : styles.image}
-                  source={item.image}
-                />
+                <Image style={styles.image} source={!activeCategory?{ uri: item.image }:{uri: item.item.image }} />
               </TouchableOpacity>
-              <View
-                style={
-                  active ? styles.containerTextHorizontal : styles.containerText
-                }
-              >
-                <Text
-                  style={active ? styles.nameTextHorizontal : styles.nameText}
-                >
-                  {item.name}
-                </Text>
-                <Text style={styles.valueText}>{item.price}</Text>
+              <View style={styles.containerText}>
+                <Text style={styles.nameText}>{!activeCategory?item.name:item.item.name}</Text>
+                <Text style={styles.valueText}>$ {!activeCategory?item.price:item.item.price}</Text>
               </View>
-              <Counter
-                active={active}
-                item={item}
-                setItems={setItems}
-                items={items}
-              />
-              {active && (
-                <TouchableOpacity>
-                  <Image
-                    style={styles.removeIcon}
-                    source={require("../../../assets/Icons/removeIcon.png")}
-                  ></Image>
-                </TouchableOpacity>
-              )}
+              <Counter item={!activeCategory?item:item.item} setItems={setItems} items={items} />
             </View>
           </View>
         );

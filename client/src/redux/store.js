@@ -5,7 +5,7 @@ import itemsReducer from "../features/cart/cartSlice";
 export const store = configureStore({
   reducer: {
     [todosApi.reducerPath]: todosApi.reducer,
-    items: itemsReducer,
+    cart: itemsReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(todosApi.middleware),

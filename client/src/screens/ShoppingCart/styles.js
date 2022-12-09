@@ -82,18 +82,19 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     height: '6%',
+    justifyContent:'space-between'
   },
   totalOrder: {
     color: '#FFFFFF',
     fontSize: 20,
-    marginLeft: '5%',
-    marginRight: '15%',
+    paddingLeft:'4%',
     position: 'relative',
     bottom: 10,
   },
   totalValueOrder: {
     color: '#EB7828',
     fontSize: 20,
+    paddingRight:'6%',
     position: 'relative',
     bottom: 10,
   },

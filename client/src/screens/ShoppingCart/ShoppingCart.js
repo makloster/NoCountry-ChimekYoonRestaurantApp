@@ -8,6 +8,7 @@ import ShopingItems from "../../components/ShoppingCart/ShopingItems";
 let chimekYoonIcon = require("../../../assets/FoodMenu/ChimekYoonIcon.png");
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
+import CartEmpty from "../../components/ShoppingCart/CartEmpty";
 let textInputPlaceHolderColor = "#FFFFFF";
 let textInputDefaultValue = "Añadir una nota";
 let textAddBtn = "Añadir mas";
@@ -19,18 +20,19 @@ const ShoppingCart = () => {
   /* Estado del total del pedido  */
   //const [total, setTotal] = useState(null);
   const [confirmation, setConfirmation] = useState(false);
+  const [confirmationOrder, setConfirmationOrder] = useState(false)
   const onPressAddNote = () => {
     setTouchAddNote(!touchAddNote);
   };
 
-  const {total} = useContext(CartContext)
+  const {total,carrito} = useContext(CartContext)
 
   const onPressCancel = () => {
     setTouchAddNote(false);
   };
 
   const onPressSuccess = () => {
-    /* Mandar por redux o hacer pedido al Back */
+   setConfirmationOrder(true);
   };
 
   const onPressConfirmation = () => {
@@ -38,13 +40,14 @@ const ShoppingCart = () => {
   };
 
   return (
+    !carrito.length?<CartEmpty/>:
     <SafeAreaView style={styles.container}>
       <>
         <View style={styles.containerLogo}>
           <Image style={styles.logo} source={chimekYoonIcon} />
         </View>
         {/* <ScrollMenu active={true} /> */}
-        <ShopingItems active={true} />
+        <ShopingItems/> 
       </>
 
       <View style={styles.containerFootherShoppingCart}>
@@ -58,7 +61,7 @@ const ShoppingCart = () => {
             styleSuccessBtn={styles.successBtn}
             styleCancelBtn={styles.cancelBtn}
             styleTextBtn={styles.textBtns}
-            onPressSuccess={onPressSuccess}
+           
             onPressCancel={onPressCancel}
           />
         ) : (
@@ -72,7 +75,7 @@ const ShoppingCart = () => {
       </View>
       <View style={styles.containerTotalOrder}>
         <Text style={styles.totalOrder}>Total del pedido :</Text>
-        <Text style={styles.totalValueOrder}>{total()}</Text>
+        <Text style={styles.totalValueOrder}>$ {total()}</Text>
       </View>
       <FootherBtns
         styleContainerFootherBtns={styles.footherBtns}
@@ -83,6 +86,9 @@ const ShoppingCart = () => {
         textAddBtn={textAddBtn}
         textConfirmBtn={textConfirmBtn}
         confirmation={confirmation}
+        confirmationOrder={confirmationOrder}
+        setConfirmationOrder={setConfirmationOrder}
+        onPressSuccess={onPressSuccess}
         onPressConfirmation={onPressConfirmation}
         setConfirmation={setConfirmation}
       />
