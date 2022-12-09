@@ -86,9 +86,5 @@ export const styles = StyleSheet.create({
     fontSize: 16 
   },
 
-  removeIcon:{
-    position:'relative',
-    top:40,
-    right:30,
-  }
+  
 });

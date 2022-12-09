@@ -4,20 +4,13 @@ import { View, Text, Image, ImageBackground, Pressable, FlatList, TouchableOpaci
 import { styles } from './stylesTables';
 import ButtonTable from './ButtonTable';
 import { useNavigation } from '@react-navigation/native';
-
+import { useContext } from 'react';
+import { TablesContext } from '../../context/TablesContext';
 const Tables = () => {
-    const data = [
-        { id:1, label: 'Mesa 1', state:'Disponible' },
-        { id:2, label: 'Mesa 2', state:'No disponible'},
-        { id:3, label: 'Mesa 3', state:'Disponible'},
-        { id:4, label: 'Mesa 4', state:'Disponible'},
-        { id:5, label: 'Mesa 5', state:'Disponible'},
-        { id:6, label: 'Mesa 6', state:'Disponible'},
-        { id:7, label: 'Mesa 7', state:'Disponible'},
-        { id:8, label: 'Mesa 8', state:'Disponible'},
-      ];
 
-    const [selectedItem, setSelectedItem] = useState(null);
+    const {data,btnActive,onSelectedItem,setShowOptions,showOptions,value } = useContext(TablesContext)
+    
+    /*const [selectedItem, setSelectedItem] = useState(null);
     const [showOptions, setShowOptions] = useState(false);
     const [btnActive, setBtnActive] = useState(false);
 
@@ -34,7 +27,7 @@ const Tables = () => {
     }
     
     let value = selectedItem
-    console.log(value)
+    console.log(value)*/
     const navigation = useNavigation(); 
     return (
        
@@ -73,10 +66,10 @@ const Tables = () => {
                                 <TouchableOpacity key={item.id} 
                                       style={styles.itemList} 
                                       onPress={()=>onSelectedItem(item)}
-                                      disabled={item.state==='No disponible'&&true}
+                                      disabled={item.availability==='No disponible'&&true}
                                 >
-                                    <Text style={item.state==='No disponible'&&{opacity:0.4}} >{item.label}</Text>
-                                    <Text style={[styles.itemState, item.state==='No disponible'&&{opacity:0.4}]}>{item.state}</Text>
+                                    <Text style={item.availability==='No disponible'&&{opacity:0.4}} >{item.label}</Text>
+                                    <Text style={[styles.itemState, item.availability==='No disponible'&&{opacity:0.4}]}>{item.availability}</Text>
                                 </TouchableOpacity>
                                 );
                             }}
@@ -86,7 +79,7 @@ const Tables = () => {
                 <ButtonTable
                     text="Continuar"
                     onPress={() => {
-                    navigation.navigate("MyTabs");
+                    navigation.navigate("MyTabs")
                     }}
                     btnActive={btnActive}
                     

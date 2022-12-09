@@ -20,8 +20,15 @@ let subTitleTwo =
   '(Se recomienda cambiar el estado luego de realizar la acción)';
 let textCancel = 'Cancelar';
 let textSafe = 'Guardar cambios';
-
+import { useContext } from 'react';
+import { TablesContext } from '../../context/TablesContext';
+import { useNavigation } from '@react-navigation/native';
 const StatusScreen = () => {
+
+  const navigation = useNavigation();
+
+  const {state,setState} = useContext(TablesContext);
+
   const [stateTable, setStateTable] = useState(false);
   const onPressBtnStateBeingAttended = () => {
     setStateTable(true);
@@ -30,6 +37,11 @@ const StatusScreen = () => {
   const onPressBtnStateAttended = () => {
     setStateTable(false);
   };
+  const onPressSafe = () =>{
+    !stateTable?setState("#FFD952"):setState("#8DFF65")
+    navigation.navigate("FoodMenu")
+    console.log(state)
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -79,6 +91,7 @@ const StatusScreen = () => {
         styleTextBtnCancel={styles.textBtn}
         styleTextBtnSafe={styles.textBtn}
         styleContainerFoother={styles.containerFoother}
+        onPressSafe={onPressSafe}
       />
     </SafeAreaView>
   );

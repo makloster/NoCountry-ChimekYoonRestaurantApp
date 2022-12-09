@@ -1,23 +1,21 @@
 import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
-import { styles } from "./stylesScrollMenu";
-import React, { useState } from "react";
-import Counter from "../Counter/Counter";
-import { useNavigation } from "@react-navigation/native";
-import { useGetTodosQuery } from "../../features/items/itemSlice";
+import { styles } from "../FoodMenu/stylesScrollMenu";
+import React from "react";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
+import CartCounter from "../Counter/CartCounter";
 
-const ScrollMenu = ({ active }) => {
-  const navigation = useNavigation();
-  const { data } = useGetTodosQuery();
-  const [items, setItems] = useState([]);
+const ShopingItems = ({active}) => {
 
-  
+  const {carrito} = useContext(CartContext);
 
   return (
     <FlatList
-      data={data}
+      data={carrito}
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{ paddinTop: 50 }}
       scrollEventThrottle={16}
+      keyExtractor={(item) => item.id}
       renderItem={({ item }) => {
         return (
           <View
@@ -31,11 +29,6 @@ const ScrollMenu = ({ active }) => {
             >
               <TouchableOpacity
                 style={active ? styles.imageFrameHorizontal : styles.imageFrame}
-                onPress={() => {
-                  navigation.navigate("ItemDetail",{
-                    item:item
-                  });
-                }}
               >
                 <Image
                   style={active ? styles.imageHorizontal : styles.image}
@@ -54,20 +47,8 @@ const ScrollMenu = ({ active }) => {
                 </Text>
                 <Text style={styles.valueText}>{item.price}</Text>
               </View>
-              <Counter
-                active={active}
-                item={item}
-                setItems={setItems}
-                items={items}
-              />
-              {active && (
-                <TouchableOpacity>
-                  <Image
-                    style={styles.removeIcon}
-                    source={require("../../../assets/Icons/removeIcon.png")}
-                  ></Image>
-                </TouchableOpacity>
-              )}
+              <CartCounter item={item}/>
+              
             </View>
           </View>
         );
@@ -76,4 +57,4 @@ const ScrollMenu = ({ active }) => {
   );
 };
 
-export default ScrollMenu;
+export default ShopingItems;

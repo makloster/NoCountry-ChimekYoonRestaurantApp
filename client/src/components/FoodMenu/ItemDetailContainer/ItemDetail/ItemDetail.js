@@ -2,7 +2,10 @@ import React from 'react';
 import { View, Text,  Image} from 'react-native';
 import CounterHorizontal from '../../../Counter/CounterHorizontal';
 import { styles } from './stylesItemDetail';
-const ItemDetail = () => {
+const ItemDetail = ({item, valueQuantity, setValueQuantity}) => {
+
+  
+
     return (
         <View style={styles.containerItem}>
     
@@ -15,8 +18,8 @@ const ItemDetail = () => {
           </View>
           
           <View style={styles.headings}>
-            <Text style={styles.name}>Sushi</Text>
-            <Text style={styles.price}>$ 223</Text>
+            <Text style={styles.name}>{item.name}</Text>
+            <Text style={styles.price}>$ {item.price}</Text>
           </View>
           <View style={styles.containerDescription}>
               <Text style={styles.description}>
@@ -26,7 +29,7 @@ const ItemDetail = () => {
           
           <View style={styles.containerCounter}>
             <Text style={styles.cantidad}>Cantidad</Text>
-            <CounterHorizontal/>
+            <CounterHorizontal item={item} valueQuantity={valueQuantity} setValueQuantity={setValueQuantity}/>
           </View>
         
       </View>

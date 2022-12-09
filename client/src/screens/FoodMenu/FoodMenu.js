@@ -13,13 +13,13 @@ import ScrollCategory from '../../components/FoodMenu/ScrollCategory';
 import ScrollMenu from '../../components/FoodMenu/ScrollMenu';
 import TableWidget from '../../components/tableWidget/tableWidget';
 import { styles } from './stylesFoodMenu';
-
 const FoodMenu = ({ navigation }) => {
   let textInputDefaultValue = 'Buscar plato ...';
   let textInputPlaceHolderColor = '#FFFFFF';
   let hamburgerMenu = require('../../../assets/FoodMenu/HamburgerMenu.png');
   let chimekYoonIcon = require('../../../assets/FoodMenu/ChimekYoonIcon.png');
 
+ 
   const [confirmation, setConfirmation] = useState(false);
 
   const showModal = () =>{
@@ -36,7 +36,7 @@ const FoodMenu = ({ navigation }) => {
       <Image style={styles.logo} source={chimekYoonIcon} />
       <View style={styles.titleContainer}>
         <Text style={styles.title}>Reserva tu comida</Text>
-        <TableWidget/>
+        <TableWidget />
       </View>
 
       <TextInput

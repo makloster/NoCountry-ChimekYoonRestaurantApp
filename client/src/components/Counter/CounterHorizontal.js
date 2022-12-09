@@ -1,10 +1,11 @@
 import {React, useState} from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
 import { styles } from './stylesCounter';
-const CounterHorizontal = () => {
 
-    const [valueQuantity, setValueQuantity] = useState(0);
+const CounterHorizontal = ({valueQuantity, setValueQuantity}) => {
 
+   
+   
     const onPressPlus = () => {
       setValueQuantity(valueQuantity + 1);
     };
