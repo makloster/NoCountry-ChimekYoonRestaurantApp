@@ -7,8 +7,6 @@ import { useNavigation } from '@react-navigation/native';
 const ScrollMenu = ({ data, activeCategory }) => {
   const navigation = useNavigation();
 
-
-  console.log(data, "holaa esta es data" )
   const [items, setItems] = useState([]);
   return (
     <FlatList

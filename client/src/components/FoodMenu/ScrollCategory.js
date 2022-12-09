@@ -21,7 +21,7 @@ const ScrollCategory = ({data,filterInfo }) => {
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={{ paddinTop: 50 }}
         scrollEventThrottle={16}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item._id}
         renderItem={({ item }) => {
           return (
             <TouchableOpacity
