@@ -2,44 +2,13 @@ import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { styles } from './stylesScrollCategory';
 
-const ScrollCategory = () => {
-  const categorias = [
-    {
-      id: 1,
-      name: 'Alitas',
-      thumbnail: require('../../../assets/Home/principal.png'),
-    },
-    {
-      id: 2,
-      name: 'Hamburguesas',
-      thumbnail: require('../../../assets/Home/principal.png'),
-    },
-    {
-      id: 3,
-      name: 'Papas',
-      thumbnail: require('../../../assets/Home/principal.png'),
-    },
-    {
-      id: 4,
-      name: 'Combos',
-      thumbnail: require('../../../assets/Home/principal.png'),
-    },
-    {
-      id: 5,
-      name: 'Pop Corn',
-      thumbnail: require('../../../assets/Home/principal.png'),
-    },
-    {
-      id: 6,
-      name: 'Bebidas',
-      thumbnail: require('../../../assets/Home/principal.png'),
-    },
-  ];
+const ScrollCategory = ({data,filterInfo }) => {
+  
 
   return (
     <View style={styles.container}>
       <FlatList
-        data={categorias}
+        data={data}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={{ paddinTop: 50 }}
@@ -54,11 +23,13 @@ const ScrollCategory = () => {
                   : styles.categoryContainerOrange
               }
 
+              onPress={() => filterInfo(item.id)}
+
               
             >
               <View style={styles.category}>
                 <View style={styles.imageFrame}>
-                  <Image style={styles.image} source={item.thumbnail} />
+                  <Image style={styles.image} source={{uri:item.image}} />
                 </View>
                 <View>
                   <Text style={styles.name}>{item.name}</Text>
