@@ -1,9 +1,9 @@
 import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
 import { styles } from "../FoodMenu/stylesScrollMenu";
 import React from "react";
-import Counter from "../Counter/Counter";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
+import CartCounter from "../Counter/CartCounter";
 
 const ShopingItems = () => {
 
@@ -42,15 +42,8 @@ const ShopingItems = () => {
                 </Text>
                 <Text style={styles.valueText}>$ {item.price}</Text>
               </View>
-              <Counter active={active} />
-              {active && (
-                <TouchableOpacity>
-                  <Image
-                    style={styles.removeIcon}
-                    source={require("../../../assets/Icons/removeIcon.png")}
-                  ></Image>
-                </TouchableOpacity>
-              )}
+              <CartCounter item={item}/>
+              
             </View>
           </View>
         );
