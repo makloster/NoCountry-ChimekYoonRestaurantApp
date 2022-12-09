@@ -60,13 +60,9 @@ export const styles = StyleSheet.create({
     fontSize: 16,
   },
 
-<<<<<<< HEAD
-  
-=======
   removeIcon: {
     position: 'relative',
     top: 40,
     right: 30,
   },
->>>>>>> fe119aa (Estilo y quitar el active)
 });

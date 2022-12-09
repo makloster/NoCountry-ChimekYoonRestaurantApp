@@ -6,22 +6,19 @@ import {
   Image,
   SafeAreaView,
   TouchableOpacity,
-  Alert,
-} from "react-native";
-import { useDispatch } from "react-redux";
-import ButtonConfirmation from "../../components/FoodMenu/ButtonConfirmation/ButtonConfirmation";
-import MenuModal from "../../components/FoodMenu/MenuModal/MenuModal";
-import ScrollCategory from "../../components/FoodMenu/ScrollCategory";
-import ScrollMenu from "../../components/FoodMenu/ScrollMenu";
-import TableWidget from "../../components/tableWidget/tableWidget";
-import { addItem } from "../../features/cart/cartSlice";
-import { styles } from "./stylesFoodMenu";
+} from 'react-native';
+import ButtonConfirmation from '../../components/FoodMenu/ButtonConfirmation/ButtonConfirmation';
+import MenuModal from '../../components/FoodMenu/MenuModal/MenuModal';
+import ScrollCategory from '../../components/FoodMenu/ScrollCategory';
+import ScrollMenu from '../../components/FoodMenu/ScrollMenu';
+import TableWidget from '../../components/tableWidget/tableWidget';
+import { styles } from './stylesFoodMenu';
 
-const FoodMenu = ({ navigation, items }) => {
-  let textInputDefaultValue = "Buscar plato ...";
-  let textInputPlaceHolderColor = "#FFFFFF";
-  let hamburgerMenu = require("../../../assets/FoodMenu/HamburgerMenu.png");
-  let chimekYoonIcon = require("../../../assets/FoodMenu/ChimekYoonIcon.png");
+const FoodMenu = ({ navigation }) => {
+  let textInputDefaultValue = 'Buscar plato ...';
+  let textInputPlaceHolderColor = '#FFFFFF';
+  let hamburgerMenu = require('../../../assets/FoodMenu/HamburgerMenu.png');
+  let chimekYoonIcon = require('../../../assets/FoodMenu/ChimekYoonIcon.png');
 
   const [confirmation, setConfirmation] = useState(false);
   const [prod, setProd] = useState();

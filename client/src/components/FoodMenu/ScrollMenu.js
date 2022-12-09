@@ -3,17 +3,11 @@ import { styles } from './stylesScrollMenu';
 import React, { useState } from 'react';
 import Counter from '../Counter/Counter';
 import { useNavigation } from '@react-navigation/native';
-import { useGetTodosQuery } from '../../features/items/itemSlice';
 
-<<<<<<< HEAD
-const ScrollMenu = ({ active, setProd }) => {
-=======
-const ScrollMenu = () => {
->>>>>>> fe119aa (Estilo y quitar el active)
+const ScrollMenu = ({ data, activeCategory }) => {
   const navigation = useNavigation();
-  const { data } = useGetTodosQuery();
-  const [items, setItems] = useState([]);
 
+  const [items, setItems] = useState([]);
   return (
     <FlatList
       data={data}
@@ -27,36 +21,18 @@ const ScrollMenu = () => {
               <TouchableOpacity
                 style={styles.imageFrame}
                 onPress={() => {
-                  navigation.navigate('ItemDetail', {
-                    item: item,
-                  });
+                  navigation.navigate('ItemDetail', 
+                    !activeCategory?{item:item}:{item:item.item},
+                  );
                 }}
               >
-                <Image style={styles.image} source={item.image} />
+                <Image style={styles.image} source={!activeCategory?{ uri: item.image }:{uri: item.item.image }} />
               </TouchableOpacity>
               <View style={styles.containerText}>
-                <Text style={styles.nameText}>{item.name}</Text>
-                <Text style={styles.valueText}>{item.price}</Text>
+                <Text style={styles.nameText}>{!activeCategory?item.name:item.item.name}</Text>
+                <Text style={styles.valueText}>$ {!activeCategory?item.price:item.item.price}</Text>
               </View>
-<<<<<<< HEAD
-              <Counter
-                active={active}
-                item={item}
-                setItems={setItems}
-                items={items}
-                setProd={setProd}
-              />
-=======
-              <Counter item={item} setItems={setItems} items={items} />
->>>>>>> fe119aa (Estilo y quitar el active)
-              {active && (
-                <TouchableOpacity>
-                  <Image
-                    style={styles.removeIcon}
-                    source={require('../../../assets/Icons/removeIcon.png')}
-                  ></Image>
-                </TouchableOpacity>
-              )}
+              <Counter item={!activeCategory?item:item.item} setItems={setItems} items={items} />
             </View>
           </View>
         );
