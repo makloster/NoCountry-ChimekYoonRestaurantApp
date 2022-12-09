@@ -65,21 +65,22 @@ export const styles = StyleSheet.create({
 
     headings: {
         flexDirection:'row',
-        
+        width:'100%',
+        justifyContent:'space-between'
     },
 
     name:{
         color:'#FFFFFF',
         fontSize:30,
         fontWeight:'500',
-        paddingRight:125
+        paddingLeft:'4%'
     },
 
     price:{
         color:'#EB7828',
         fontSize:30,
         fontWeight:'500',
-        paddingLeft:90
+        paddingRight:'4%'
     },
 
     containerDescription:{
