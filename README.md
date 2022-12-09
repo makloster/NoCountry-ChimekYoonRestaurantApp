@@ -1,6 +1,6 @@
 # s5-11-t-react-native
 
-[imagTBD]
+Aplicativo para el restaurante Chimek Yoon.
 
 # Índice
 
@@ -13,7 +13,9 @@
 
 # Descripción
 
-[TBD]
+Este proyecto fue diseñado para atender las necesidades de Chimek Yoon, restarurante de Ecuador.
+
+Además de las funcionalidades estándar de un aplicativo tal, nuestro cliente necesitaba que los pedidos de cada mesa pudieran llegar rápidamente a la cocina, para no perder tiempo. Por ello implementamos la impresión de órdenes en cocina por medio de una impresora térmica.
 
 ## Video Promocional
 
@@ -62,8 +64,11 @@
 
 ## Deploy
 
-[TBD]
+1. Descargar Expo Go desde :
 
-## Documentación
+-   [Android Playstore](https://play.google.com/store/apps/details?id=host.exp.exponent)
+-   [Apple App Store](https://apps.apple.com/es/app/expo-go/id982107779)
 
-[TBD]
+2. Scanneá el QR 👇 , con el scanner que se encuentra al ejecutar Expo Go .
+   <br>
+   <img src="https://cdn.discordapp.com/attachments/1038477510628880488/1050641250862243911/chimek.png" alt="expo" width="200" height="200" >
