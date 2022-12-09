@@ -5,6 +5,7 @@ export const styles = StyleSheet.create({
     borderBottomColor: '#FFFFFF',
     borderBottomWidth: 0.7,
     height: 150,
+  
   },
   containerDish: {
     paddingLeft: '5%',

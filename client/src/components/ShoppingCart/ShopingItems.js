@@ -10,6 +10,7 @@ const ShopingItems = ({active}) => {
   const {carrito} = useContext(CartContext);
 
   return (
+   
     <FlatList
       data={carrito}
       showsVerticalScrollIndicator={false}

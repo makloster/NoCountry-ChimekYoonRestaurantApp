@@ -1,8 +1,7 @@
 import { View, Text, TouchableOpacity } from 'react-native';
 import React from 'react';
-import ConfirmationModal from '../ConfirmationModals/ConfirmationModal';
 import { useNavigation } from '@react-navigation/native';
-
+import PreConfirmationModal from './PreConfirmationModal/PreConfirmationModal'
 const FootherBtns = (props) => {
   const {
     styleContainerFootherBtns,
@@ -14,15 +13,24 @@ const FootherBtns = (props) => {
     textConfirmBtn,
     confirmation,
     onPressConfirmation,
-    setConfirmation
+    onPressSuccess,
+    setConfirmation,
+    confirmationOrder,
+    setConfirmationOrder
     
   } = props;
 
   const navigation=useNavigation();
-  
+
   return (
     <View style={styleContainerFootherBtns}>
-      <ConfirmationModal confirmation={confirmation} setConfirmation={setConfirmation}/>
+      <PreConfirmationModal 
+        confirmation={confirmation} 
+        setConfirmation={setConfirmation} 
+        onPressSuccess={onPressSuccess}
+        confirmationOrder={confirmationOrder}
+        setConfirmationOrder={setConfirmationOrder}
+      />
       <TouchableOpacity 
           style={styleAddBtn}
           onPress={()=>{
