@@ -1,6 +1,4 @@
-# s5-11-t-react-native
-
-Aplicativo para el restaurante Chimek Yoon.
+# Aplicativo para el restaurante Chimek Yoon.
 
 # Índice
 
@@ -16,10 +14,6 @@ Aplicativo para el restaurante Chimek Yoon.
 Este proyecto fue diseñado para atender las necesidades de Chimek Yoon, restarurante de Ecuador.
 
 Además de las funcionalidades estándar de un aplicativo tal, nuestro cliente necesitaba que los pedidos de cada mesa pudieran llegar rápidamente a la cocina, para no perder tiempo. Por ello implementamos la impresión de órdenes en cocina por medio de una impresora térmica.
-
-## Video Promocional
-
-[TBD]
 
 <a name="tecnologias"></a>
 
