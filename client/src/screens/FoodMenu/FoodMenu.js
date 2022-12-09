@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import ButtonConfirmation from '../../components/FoodMenu/ButtonConfirmation/ButtonConfirmation';
-import MenuModal from '../../components/FoodMenu/MenuModal/MenuModal';
+//import MenuModal from '../../components/FoodMenu/MenuModal/MenuModal';
 import ScrollCategory from '../../components/FoodMenu/ScrollCategory';
 import ScrollMenu from '../../components/FoodMenu/ScrollMenu';
 import TableWidget from '../../components/tableWidget/tableWidget';
@@ -45,10 +45,10 @@ const FoodMenu = ({ navigation }) => {
   //navigation.navigate("ShoppingCart")
   return (
     <SafeAreaView style={styles.menuContainer}>
-      <MenuModal
+      {/*<MenuModal
         confirmation={confirmation}
         setConfirmation={setConfirmation}
-      />
+      />*/}
       <TouchableOpacity style={styles.hamburgerMenuContainer}>
         <Image source={hamburgerMenu} />
       </TouchableOpacity>
