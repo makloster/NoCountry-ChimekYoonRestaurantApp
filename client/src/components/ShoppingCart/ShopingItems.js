@@ -2,15 +2,6 @@ import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
 import { styles } from "../FoodMenu/stylesScrollMenu";
 import React from "react";
 import Counter from "../Counter/Counter";
-<<<<<<< HEAD
-import { useSelector } from "react-redux";
-
-const ShopingItems = ({ active }) => {
-  const cart = useSelector((state) => state.cart);
-  console.log(cart, "data redux ahora");
-
-  return cart && cart.map((el) => <Text>{el.name}</Text>);
-=======
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 
@@ -71,7 +62,6 @@ const ShopingItems = ({active}) => {
       }}
     />
   );
->>>>>>> 5642fe6 (cartcontext)
 };
 
 export default ShopingItems;

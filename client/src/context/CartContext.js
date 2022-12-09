@@ -53,7 +53,7 @@ export const CartContextProvider = (props) => {
     
 
     const total=() => {
-        const resultado = auxCarrito.map(valorTotal => valorTotal.cantidad * valorTotal.precio).reduce((acc,curr) => acc + curr, 0)
+        const resultado = auxCarrito.map(valorTotal => valorTotal.cantidad * valorTotal.price).reduce((acc,curr) => acc + curr, 0)
         return resultado
     }
 
