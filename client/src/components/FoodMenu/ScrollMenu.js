@@ -29,8 +29,8 @@ const ScrollMenu = ({ data, activeCategory }) => {
                 <Image style={styles.image} source={!activeCategory?{ uri: item.image }:{uri: item.item.image }} />
               </TouchableOpacity>
               <View style={styles.containerText}>
-                <Text style={styles.nameText}>{item.name}</Text>
-                <Text style={styles.valueText}>$ {item.price}</Text>
+                <Text style={styles.nameText}>{!activeCategory?item.name:item.item.name}</Text>
+                <Text style={styles.valueText}>$ {!activeCategory?item.price:item.item.price}</Text>
               </View>
               <Counter item={!activeCategory?item:item.item} setItems={setItems} items={items} />
             </View>

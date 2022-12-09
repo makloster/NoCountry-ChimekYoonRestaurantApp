@@ -30,7 +30,7 @@ const ShopingItems = () => {
               >
                 <Image
                   style={styles.image}
-                  source={item.image}
+                  source={{uri:item.image}}
                 />
               </TouchableOpacity>
               <View
