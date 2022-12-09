@@ -20,6 +20,11 @@ const PreConfirmationModal = (props) => {
         setConfirmation(false)
     }
 
+    const confirmationOrderFinal = () => {
+        onPressSuccess()
+        setConfirmation(false)
+    }
+
     return (
         <>
      <ConfirmationModal confirmationOrder={confirmationOrder} setConfirmationOrder={setConfirmationOrder}/>
