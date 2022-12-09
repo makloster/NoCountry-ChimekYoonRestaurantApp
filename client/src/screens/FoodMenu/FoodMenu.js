@@ -25,6 +25,7 @@ const FoodMenu = ({ navigation }) => {
   const [data, setData] = useState([]);
   const [categories, setCategories] = useState([]);
   const [search, setSearch] = useState('');
+  const [categoriesActivated, setCategoriesActivated] = useState(false);
 
   const showModal = () => {
     setConfirmation(true);
@@ -49,6 +50,7 @@ const FoodMenu = ({ navigation }) => {
     try {
       const value = await axios.get(API_URL_CATEG + id);
       setFilteredCategories(value.data);
+      setCategoriesActivated(true)
     } catch (error) {}
   };
 
@@ -92,8 +94,8 @@ const FoodMenu = ({ navigation }) => {
       <View style={styles.subTitleContainer}>
         <Text style={styles.subTitle}>Categorías</Text>
       </View>
-      <ScrollCategory data={categories} filterInfo={getFilteredMenu} />
-      <ScrollMenu data={data} />
+      <ScrollCategory data={categories} filterInfo={getFilteredMenu}/>
+      <ScrollMenu data={data} activeCategory={categoriesActivated}/>
     </SafeAreaView>
   );
 };
