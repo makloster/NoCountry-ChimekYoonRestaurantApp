@@ -1,4 +1,4 @@
-# Aplicativo para el restaurante Chimek Yoon.
+# Chimek Yoon Restaurant App
 
 # Índice
 
@@ -36,7 +36,8 @@ Además de las funcionalidades estándar de un aplicativo tal, nuestro cliente n
 
 -   **Node.js**&nbsp; <a href="https://nodejs.org" rel="nofollow"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40" style="max-width: 100%;"> </a>
 -   **Express.js**&nbsp; <a href="https://expressjs.com" rel="nofollow"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40" style="max-width: 100%;"> </a>
--   **MongoDb**&nbsp; <a href="https://www.mongodb.com/es" rel="nofollow"> <img src="https://nakedsecurity.sophos.com/wp-content/uploads/sites/2/2017/01/mongodb.png?w=775" alt="express" width="40" height="40" style="max-width: 100%;"> </a>
+-   **MongoDB**&nbsp; <a href="https://www.mongodb.com/es" rel="nofollow"> <img src="https://nakedsecurity.sophos.com/wp-content/uploads/sites/2/2017/01/mongodb.png?w=775" alt="express" width="40" height="40" style="max-width: 100%;"> </a>
+-   **MongoDB Atlas Database**
 
 ### **UI/UX**
 
