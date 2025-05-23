@@ -52,7 +52,7 @@ Además de las funcionalidades estándar de un aplicativo tal, nuestro cliente n
 | Alan Fránquez          | Diseñador  | https://www.linkedin.com/in/alanfranquez/           | https://www.behance.net/AlanFranquez        |
 | Alexander Castañeda     | Frontend | https://www.linkedin.com/in/alexander-castañeda       | https://github.com/iwill88       |
 | Ivan Belasich     | Frontend | https://www.linkedin.com/in/ivanbelasich      | https://github.com/ivanbelasich       |
-| Manuel Kloster          | Backend  | https://www.linkedin.com/in/manuel-kloster           | https://github.com/Nekrocow/        |
+| Manuel Kloster          | Backend  | https://www.linkedin.com/in/manuel-kloster           | https://github.com/makloster/        |
 | Mario Martinez | Backend | https://www.linkedin.com/in/mario-mtz/ | https://github.com/soymariomtz  |
 | Mauricio Martin Fontana | Frontend | https://www.linkedin.com/in/mauricio-martin-fontana-a9585a58 | https://github.com/peladoo  |
 | Mauro Arteaga           | Frontend | https://www.linkedin.com/in/mauro-arteaga-754543241/ | https://github.com/Mauroskyer       |
